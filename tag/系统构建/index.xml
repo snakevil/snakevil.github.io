@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>系统构建 on 天天蜕皮的大蛇 Re</title>
+    <link>https://szen.in/tag/%E7%B3%BB%E7%BB%9F%E6%9E%84%E5%BB%BA/</link>
+    <description>Recent content in 系统构建 on 天天蜕皮的大蛇 Re</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 07 Apr 2017 04:43:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://szen.in/tag/%E7%B3%BB%E7%BB%9F%E6%9E%84%E5%BB%BA/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GNUMake 使用静态模式规则</title>
+      <link>https://szen.in/2017/04/GNUMake%E4%BD%BF%E7%94%A8%E9%9D%99%E6%80%81%E6%A8%A1%E5%BC%8F%E8%A7%84%E5%88%99/</link>
+      <pubDate>Fri, 07 Apr 2017 04:43:00 +0000</pubDate>
+      
+      <guid>https://szen.in/2017/04/GNUMake%E4%BD%BF%E7%94%A8%E9%9D%99%E6%80%81%E6%A8%A1%E5%BC%8F%E8%A7%84%E5%88%99/</guid>
+      <description>&lt;p&gt;最近在写 &lt;a href=&#34;https://github.com/snakevil-archive/luadex2&#34;&gt;Luadex2&lt;/a&gt; 时，顺手就用 &lt;a href=&#34;http://www.gnu.org/software/make/&#34;&gt;GNUMake&lt;/a&gt; 来做构建工具了——这样还能热热手把好久好久没用地 &lt;a href=&#34;http://www.gnu.org/software/make/&#34;&gt;GNUMake&lt;/a&gt; 再捡回来。中间碰到一个问题，我需要动态地扫描出全部的某类型的文件，然后按照同样的规则进行处理。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

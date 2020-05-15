@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>S6 on 天天蜕皮的大蛇 Re</title>
+    <link>https://szen.in/tag/S6/</link>
+    <description>Recent content in S6 on 天天蜕皮的大蛇 Re</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 29 Sep 2016 09:32:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://szen.in/tag/S6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>【译】如何将 s6-svscan 用作初始进程</title>
+      <link>https://szen.in/2016/09/%E5%A6%82%E4%BD%95%E5%B0%86s6-svscan%E7%94%A8%E4%BD%9C%E5%88%9D%E5%A7%8B%E8%BF%9B%E7%A8%8B/</link>
+      <pubDate>Thu, 29 Sep 2016 09:32:36 +0000</pubDate>
+      
+      <guid>https://szen.in/2016/09/%E5%A6%82%E4%BD%95%E5%B0%86s6-svscan%E7%94%A8%E4%BD%9C%E5%88%9D%E5%A7%8B%E8%BF%9B%E7%A8%8B/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://skarnet.org/software/s6/s6-svscan-1.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;2015 年 6 月 17 日之后，如果你是 Linux 用户，你可以使用 &lt;a href=&#34;http://skarnet.org/software/s6-linux-init/&#34;&gt;s6-linux-init&lt;/a&gt; 包来帮助你实现同样的目标！尽管如此，还是请你首先阅读本篇文档，以理解 s6-linux-init 的工作内容。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;将 s6-svscan 用作初始进程是可行的。但这并不意味着你可以直接通过 s6-svscan &lt;strong&gt;引导&lt;/strong&gt;，因为它还无法胜任完整的初始化系统所应做地全部工作。正确地替换掉初始进程，还需要对其工作内容做更多地理解。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】Docker 和 S6 ——我的进程管理器新欢</title>
+      <link>https://szen.in/2016/09/Docker%E5%92%8CS6%E6%88%91%E7%9A%84%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86%E5%99%A8%E6%96%B0%E6%AC%A2/</link>
+      <pubDate>Thu, 29 Sep 2016 05:50:04 +0000</pubDate>
+      
+      <guid>https://szen.in/2016/09/Docker%E5%92%8CS6%E6%88%91%E7%9A%84%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86%E5%99%A8%E6%96%B0%E6%AC%A2/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://blog.tutum.co/2014/12/02/docker-and-s6-my-new-favorite-process-supervisor/&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;在&lt;a href=&#34;https://blog.tutum.co/2014/10/28/the-5-most-important-things-ive-learned-from-using-docker/&#34;&gt;我之前的博文&lt;/a&gt;中，我描述了我是如何在容器中使用进程管理器的，并做了一些展开。但我还是觉得有必要针对 &lt;a href=&#34;http://skarnet.org/software/s6/&#34;&gt;Laurent Bercot 开发的 S6&lt;/a&gt; 做更详尽的说明。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

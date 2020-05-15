@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>开发技巧 on 天天蜕皮的大蛇 Re</title>
+    <link>https://szen.in/category/%E5%BC%80%E5%8F%91%E6%8A%80%E5%B7%A7/</link>
+    <description>Recent content in 开发技巧 on 天天蜕皮的大蛇 Re</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 07 Apr 2017 04:43:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://szen.in/category/%E5%BC%80%E5%8F%91%E6%8A%80%E5%B7%A7/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GNUMake 使用静态模式规则</title>
+      <link>https://szen.in/2017/04/GNUMake%E4%BD%BF%E7%94%A8%E9%9D%99%E6%80%81%E6%A8%A1%E5%BC%8F%E8%A7%84%E5%88%99/</link>
+      <pubDate>Fri, 07 Apr 2017 04:43:00 +0000</pubDate>
+      
+      <guid>https://szen.in/2017/04/GNUMake%E4%BD%BF%E7%94%A8%E9%9D%99%E6%80%81%E6%A8%A1%E5%BC%8F%E8%A7%84%E5%88%99/</guid>
+      <description>&lt;p&gt;最近在写 &lt;a href=&#34;https://github.com/snakevil-archive/luadex2&#34;&gt;Luadex2&lt;/a&gt; 时，顺手就用 &lt;a href=&#34;http://www.gnu.org/software/make/&#34;&gt;GNUMake&lt;/a&gt; 来做构建工具了——这样还能热热手把好久好久没用地 &lt;a href=&#34;http://www.gnu.org/software/make/&#34;&gt;GNUMake&lt;/a&gt; 再捡回来。中间碰到一个问题，我需要动态地扫描出全部的某类型的文件，然后按照同样的规则进行处理。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Lua 面向对象式开发的 __tostring 问题</title>
+      <link>https://szen.in/2017/04/Lua%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%BC%8F%E5%BC%80%E5%8F%91%E7%9A%84tostring%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 07 Apr 2017 03:31:04 +0000</pubDate>
+      
+      <guid>https://szen.in/2017/04/Lua%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%BC%8F%E5%BC%80%E5%8F%91%E7%9A%84tostring%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;至 &lt;a href=&#34;http://luajit.org&#34;&gt;LuaJIT-2.0.4 为止&lt;/a&gt;，&lt;code&gt;tostring()&lt;/code&gt; 函数都只会检查并调用&lt;strong&gt;元表&lt;/strong&gt;的 &lt;code&gt;__tostring&lt;/code&gt; 函数。那么在面向对象式开发时，如何让基类定义地统一 &lt;code&gt;__tostring&lt;/code&gt; 机制生效？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Nginx try_files 的美感</title>
+      <link>https://szen.in/2016/11/Nginx-try_files%E7%9A%84%E7%BE%8E%E6%84%9F/</link>
+      <pubDate>Tue, 15 Nov 2016 02:04:05 +0000</pubDate>
+      
+      <guid>https://szen.in/2016/11/Nginx-try_files%E7%9A%84%E7%BE%8E%E6%84%9F/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://nginx.org&#34;&gt;Nginx&lt;/a&gt; &lt;code&gt;try_files&lt;/code&gt; 指令自实现之日启，风靡至今。单纯说功能实现地话，确实能够快速地适配各种需要场景，省掉了大段的 &lt;code&gt;if&lt;/code&gt; 和 &lt;code&gt;set&lt;/code&gt;。但相应的 URL 拼写格式，就真地不忍直视了。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用 GnuPG2 为 Git 版本签名</title>
+      <link>https://szen.in/2016/10/%E4%BD%BF%E7%94%A8GnuPG2%E4%B8%BAGit%E7%89%88%E6%9C%AC%E7%AD%BE%E5%90%8D/</link>
+      <pubDate>Mon, 24 Oct 2016 09:10:02 +0000</pubDate>
+      
+      <guid>https://szen.in/2016/10/%E4%BD%BF%E7%94%A8GnuPG2%E4%B8%BAGit%E7%89%88%E6%9C%AC%E7%AD%BE%E5%90%8D/</guid>
+      <description>&lt;p&gt;从很久很久以前开始，我就一直用 &lt;a href=&#34;http://baike.baidu.com/view/1657408.htm&#34;&gt;GnuPG&lt;/a&gt; 对自己提交的 Git 代码签名。最初地时候是为了装Ｘ，后来则是为了确保代码的可靠性——毕竟 &lt;code&gt;git config&lt;/code&gt; 都是随便写的。今天因为更换 &lt;a href=&#34;http://brew.sh&#34;&gt;Homebrew&lt;/a&gt;，顺路就更新到了 GnuPG2。但是，问题来了…&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>如何更好地管理 Nginx 多主机配置</title>
+      <link>https://szen.in/2016/08/%E5%A6%82%E4%BD%95%E6%9B%B4%E5%A5%BD%E5%9C%B0%E7%AE%A1%E7%90%86Nginx%E5%A4%9A%E4%B8%BB%E6%9C%BA%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Fri, 26 Aug 2016 05:45:17 +0000</pubDate>
+      
+      <guid>https://szen.in/2016/08/%E5%A6%82%E4%BD%95%E6%9B%B4%E5%A5%BD%E5%9C%B0%E7%AE%A1%E7%90%86Nginx%E5%A4%9A%E4%B8%BB%E6%9C%BA%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://nginx.org/&#34;&gt;Nginx&lt;/a&gt; 一直以来都有一个很尴尬地问题——就是为了效率，抛弃了 &lt;a href=&#34;http://baike.baidu.com/view/91163.htm&#34;&gt;htaccess&lt;/a&gt; 目录配置文件。当一个项目打算使用 &lt;a href=&#34;http://nginx.org/&#34;&gt;Nginx&lt;/a&gt; 来提供 HTTP 服务时，就不得不在配置文件中大量地&lt;strong&gt;硬编码&lt;/strong&gt;目录信息，可移植性和可维护性很差。那么，能否找到一种相对变通的方法，来提高可移植性和可维护性？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>/etc/cron.d 攻略</title>
+      <link>https://szen.in/2014/07/etc-cron_d%E6%94%BB%E7%95%A5/</link>
+      <pubDate>Thu, 17 Jul 2014 10:01:15 +0000</pubDate>
+      
+      <guid>https://szen.in/2014/07/etc-cron_d%E6%94%BB%E7%95%A5/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://linux.die.net/man/1/crontab&#34;&gt;crontab&lt;/a&gt; 是日常使用最为频繁地定时器工具。它将每个用户的所有定时任务统一记录、统一管理。&lt;/p&gt;
+&lt;h2 id=&#34;为什么不用-crontab-&#34;&gt;为什么不用 &lt;a href=&#34;http://linux.die.net/man/1/crontab&#34;&gt;crontab&lt;/a&gt; ？&lt;/h2&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HDD on 天天蜕皮的大蛇 Re</title>
+    <link>https://szen.in/tag/HDD/</link>
+    <description>Recent content in HDD on 天天蜕皮的大蛇 Re</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 10 May 2020 14:32:58 +0800</lastBuildDate>
+    
+	<atom:link href="https://szen.in/tag/HDD/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>将 HPE ProLiant Gen10 X3421 打造成加强版 NAS</title>
+      <link>https://szen.in/2020/05/%E5%B0%86HPE-ProLiant-Gen10-X3421%E6%89%93%E9%80%A0%E6%88%90%E5%8A%A0%E5%BC%BA%E7%89%88NAS/</link>
+      <pubDate>Sun, 10 May 2020 14:32:58 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E5%B0%86HPE-ProLiant-Gen10-X3421%E6%89%93%E9%80%A0%E6%88%90%E5%8A%A0%E5%BC%BA%E7%89%88NAS/</guid>
+      <description>&lt;p&gt;这两天 &lt;a href=&#34;https://buy.hpe.com/us/en/servers/proliant-microserver/proliant-microserver/proliant-microserver/hpe-proliant-microserver-gen10/hpe-proliant-microserver-gen10-x3421-1p-8gb-u-4lff-nhp-sata-200w-ps-soln-server/p/P04923-S01&#34;&gt;HPE ProLiant MicroServer Gen10 X3421&lt;/a&gt; 就要到货了，得赶紧提前备好硬盘——一块 SSD 做系统，四块 HDD 做 RAID10 仓库。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

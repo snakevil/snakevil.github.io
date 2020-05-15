@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nginx on 天天蜕皮的大蛇 Re</title>
+    <link>https://szen.in/tag/Nginx/</link>
+    <description>Recent content in Nginx on 天天蜕皮的大蛇 Re</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 15 Nov 2016 02:04:05 +0000</lastBuildDate>
+    
+	<atom:link href="https://szen.in/tag/Nginx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Nginx try_files 的美感</title>
+      <link>https://szen.in/2016/11/Nginx-try_files%E7%9A%84%E7%BE%8E%E6%84%9F/</link>
+      <pubDate>Tue, 15 Nov 2016 02:04:05 +0000</pubDate>
+      
+      <guid>https://szen.in/2016/11/Nginx-try_files%E7%9A%84%E7%BE%8E%E6%84%9F/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://nginx.org&#34;&gt;Nginx&lt;/a&gt; &lt;code&gt;try_files&lt;/code&gt; 指令自实现之日启，风靡至今。单纯说功能实现地话，确实能够快速地适配各种需要场景，省掉了大段的 &lt;code&gt;if&lt;/code&gt; 和 &lt;code&gt;set&lt;/code&gt;。但相应的 URL 拼写格式，就真地不忍直视了。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>如何更好地管理 Nginx 多主机配置</title>
+      <link>https://szen.in/2016/08/%E5%A6%82%E4%BD%95%E6%9B%B4%E5%A5%BD%E5%9C%B0%E7%AE%A1%E7%90%86Nginx%E5%A4%9A%E4%B8%BB%E6%9C%BA%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Fri, 26 Aug 2016 05:45:17 +0000</pubDate>
+      
+      <guid>https://szen.in/2016/08/%E5%A6%82%E4%BD%95%E6%9B%B4%E5%A5%BD%E5%9C%B0%E7%AE%A1%E7%90%86Nginx%E5%A4%9A%E4%B8%BB%E6%9C%BA%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://nginx.org/&#34;&gt;Nginx&lt;/a&gt; 一直以来都有一个很尴尬地问题——就是为了效率，抛弃了 &lt;a href=&#34;http://baike.baidu.com/view/91163.htm&#34;&gt;htaccess&lt;/a&gt; 目录配置文件。当一个项目打算使用 &lt;a href=&#34;http://nginx.org/&#34;&gt;Nginx&lt;/a&gt; 来提供 HTTP 服务时，就不得不在配置文件中大量地&lt;strong&gt;硬编码&lt;/strong&gt;目录信息，可移植性和可维护性很差。那么，能否找到一种相对变通的方法，来提高可移植性和可维护性？&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on 天天蜕皮的大蛇 Re</title>
+    <link>https://szen.in/tag/Linux/</link>
+    <description>Recent content in Linux on 天天蜕皮的大蛇 Re</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 14 May 2020 16:39:58 +0800</lastBuildDate>
+    
+	<atom:link href="https://szen.in/tag/Linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>【译】第 19 章：Z 文件系统㈥</title>
+      <link>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%85%AD/</link>
+      <pubDate>Thu, 14 May 2020 16:39:58 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%85%AD/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-advanced.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;196-进阶主题&#34;&gt;19.6 进阶主题&lt;/h2&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】第 19 章：Z 文件系统㈤</title>
+      <link>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BA%94/</link>
+      <pubDate>Wed, 13 May 2020 22:41:27 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BA%94/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-zfs-allow.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我打赌 100 块钱这四位文档撰写人员没一个的母语是英语！通篇翻译下来都有一股拉丁语系机翻英语的味道。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;195-委派管理&#34;&gt;19.5 委派管理&lt;/h2&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】第 19 章：Z 文件系统㈣</title>
+      <link>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%9B%9B/</link>
+      <pubDate>Wed, 13 May 2020 03:35:12 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%9B%9B/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-zfs.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;194-zfs-管理&#34;&gt;19.4 &lt;code&gt;zfs&lt;/code&gt; 管理&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;zfs&lt;/code&gt; 工具负责创建、销毁和管理池中的 ZFS 数据集。管理池需要使用 &lt;code&gt;zpool&lt;/code&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】第 19 章：Z 文件系统㈢</title>
+      <link>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%B8%89/</link>
+      <pubDate>Tue, 12 May 2020 10:45:39 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%B8%89/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-zpool.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;193-zpool-管理&#34;&gt;19.3 &lt;code&gt;zpool&lt;/code&gt; 管理&lt;/h2&gt;
+&lt;p&gt;ZFS 管理主要通过两个工具实现。&lt;code&gt;zpool&lt;/code&gt; 工具负责操作池和添加、删除、替换、管理磁盘。&lt;a href=&#34;https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%9B%9B/&#34;&gt;&lt;code&gt;zfs&lt;/code&gt;&lt;/a&gt; 工具负责创建、销毁和管理数据集，包括&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-term.html#zfs-term-filesystem&#34;&gt;文件系统&lt;/a&gt;和&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-term.html#zfs-term-volume&#34;&gt;卷&lt;/a&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】第 19 章：Z 文件系统㈡</title>
+      <link>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BA%8C/</link>
+      <pubDate>Mon, 11 May 2020 22:57:35 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BA%8C/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-quickstart.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;192-快速体验指南&#34;&gt;19.2 快速体验指南&lt;/h2&gt;
+&lt;p&gt;有一种启动机制可以让 FreeBSD 在系统初始化阶段加载 ZFS 池。将下行添加至 &lt;code&gt;/etc/rc.conf&lt;/code&gt;：&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】第 19 章：Z 文件系统㈠</title>
+      <link>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%B8%80/</link>
+      <pubDate>Mon, 11 May 2020 22:36:35 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%B8%80/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;由 Tom Rhodes、Allan Jude、Benedict Reuschling 和 Warren Block 编写。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;吐槽：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这帮大佬肯定都是技术宅！文档写得干干巴巴、麻麻咧咧。翻译起来脑壳疼！&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用 GnuPG2 为 Git 版本签名</title>
+      <link>https://szen.in/2016/10/%E4%BD%BF%E7%94%A8GnuPG2%E4%B8%BAGit%E7%89%88%E6%9C%AC%E7%AD%BE%E5%90%8D/</link>
+      <pubDate>Mon, 24 Oct 2016 09:10:02 +0000</pubDate>
+      
+      <guid>https://szen.in/2016/10/%E4%BD%BF%E7%94%A8GnuPG2%E4%B8%BAGit%E7%89%88%E6%9C%AC%E7%AD%BE%E5%90%8D/</guid>
+      <description>&lt;p&gt;从很久很久以前开始，我就一直用 &lt;a href=&#34;http://baike.baidu.com/view/1657408.htm&#34;&gt;GnuPG&lt;/a&gt; 对自己提交的 Git 代码签名。最初地时候是为了装Ｘ，后来则是为了确保代码的可靠性——毕竟 &lt;code&gt;git config&lt;/code&gt; 都是随便写的。今天因为更换 &lt;a href=&#34;http://brew.sh&#34;&gt;Homebrew&lt;/a&gt;，顺路就更新到了 GnuPG2。但是，问题来了…&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>如何更好地管理 Nginx 多主机配置</title>
+      <link>https://szen.in/2016/08/%E5%A6%82%E4%BD%95%E6%9B%B4%E5%A5%BD%E5%9C%B0%E7%AE%A1%E7%90%86Nginx%E5%A4%9A%E4%B8%BB%E6%9C%BA%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Fri, 26 Aug 2016 05:45:17 +0000</pubDate>
+      
+      <guid>https://szen.in/2016/08/%E5%A6%82%E4%BD%95%E6%9B%B4%E5%A5%BD%E5%9C%B0%E7%AE%A1%E7%90%86Nginx%E5%A4%9A%E4%B8%BB%E6%9C%BA%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://nginx.org/&#34;&gt;Nginx&lt;/a&gt; 一直以来都有一个很尴尬地问题——就是为了效率，抛弃了 &lt;a href=&#34;http://baike.baidu.com/view/91163.htm&#34;&gt;htaccess&lt;/a&gt; 目录配置文件。当一个项目打算使用 &lt;a href=&#34;http://nginx.org/&#34;&gt;Nginx&lt;/a&gt; 来提供 HTTP 服务时，就不得不在配置文件中大量地&lt;strong&gt;硬编码&lt;/strong&gt;目录信息，可移植性和可维护性很差。那么，能否找到一种相对变通的方法，来提高可移植性和可维护性？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OpenWrt BarrierBreaker 14.07-rc3 手记</title>
+      <link>https://szen.in/2014/09/OpenWrt-BarrierBreaker_14_07_rc3%E6%89%8B%E8%AE%B0/</link>
+      <pubDate>Thu, 18 Sep 2014 05:59:59 +0000</pubDate>
+      
+      <guid>https://szen.in/2014/09/OpenWrt-BarrierBreaker_14_07_rc3%E6%89%8B%E8%AE%B0/</guid>
+      <description>&lt;p&gt;[OpenWRT][] 新的大版本发布了第三个候选包，据说 Bug 收敛得很不错，几乎不影响正常使用了。正好我也期盼已久，果断给路由升级！&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>/etc/cron.d 攻略</title>
+      <link>https://szen.in/2014/07/etc-cron_d%E6%94%BB%E7%95%A5/</link>
+      <pubDate>Thu, 17 Jul 2014 10:01:15 +0000</pubDate>
+      
+      <guid>https://szen.in/2014/07/etc-cron_d%E6%94%BB%E7%95%A5/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://linux.die.net/man/1/crontab&#34;&gt;crontab&lt;/a&gt; 是日常使用最为频繁地定时器工具。它将每个用户的所有定时任务统一记录、统一管理。&lt;/p&gt;
+&lt;h2 id=&#34;为什么不用-crontab-&#34;&gt;为什么不用 &lt;a href=&#34;http://linux.die.net/man/1/crontab&#34;&gt;crontab&lt;/a&gt; ？&lt;/h2&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

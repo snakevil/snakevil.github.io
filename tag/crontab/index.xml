@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>crontab on 天天蜕皮的大蛇 Re</title>
+    <link>https://szen.in/tag/crontab/</link>
+    <description>Recent content in crontab on 天天蜕皮的大蛇 Re</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 17 Jul 2014 10:01:15 +0000</lastBuildDate>
+    
+	<atom:link href="https://szen.in/tag/crontab/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>/etc/cron.d 攻略</title>
+      <link>https://szen.in/2014/07/etc-cron_d%E6%94%BB%E7%95%A5/</link>
+      <pubDate>Thu, 17 Jul 2014 10:01:15 +0000</pubDate>
+      
+      <guid>https://szen.in/2014/07/etc-cron_d%E6%94%BB%E7%95%A5/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://linux.die.net/man/1/crontab&#34;&gt;crontab&lt;/a&gt; 是日常使用最为频繁地定时器工具。它将每个用户的所有定时任务统一记录、统一管理。&lt;/p&gt;
+&lt;h2 id=&#34;为什么不用-crontab-&#34;&gt;为什么不用 &lt;a href=&#34;http://linux.die.net/man/1/crontab&#34;&gt;crontab&lt;/a&gt; ？&lt;/h2&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

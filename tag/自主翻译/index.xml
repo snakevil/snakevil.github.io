@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>自主翻译 on 天天蜕皮的大蛇 Re</title>
+    <link>https://szen.in/tag/%E8%87%AA%E4%B8%BB%E7%BF%BB%E8%AF%91/</link>
+    <description>Recent content in 自主翻译 on 天天蜕皮的大蛇 Re</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 14 May 2020 16:39:58 +0800</lastBuildDate>
+    
+	<atom:link href="https://szen.in/tag/%E8%87%AA%E4%B8%BB%E7%BF%BB%E8%AF%91/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>【译】第 19 章：Z 文件系统㈥</title>
+      <link>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%85%AD/</link>
+      <pubDate>Thu, 14 May 2020 16:39:58 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%85%AD/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-advanced.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;196-进阶主题&#34;&gt;19.6 进阶主题&lt;/h2&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】第 19 章：Z 文件系统㈤</title>
+      <link>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BA%94/</link>
+      <pubDate>Wed, 13 May 2020 22:41:27 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BA%94/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-zfs-allow.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我打赌 100 块钱这四位文档撰写人员没一个的母语是英语！通篇翻译下来都有一股拉丁语系机翻英语的味道。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;195-委派管理&#34;&gt;19.5 委派管理&lt;/h2&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】第 19 章：Z 文件系统㈣</title>
+      <link>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%9B%9B/</link>
+      <pubDate>Wed, 13 May 2020 03:35:12 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%9B%9B/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-zfs.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;194-zfs-管理&#34;&gt;19.4 &lt;code&gt;zfs&lt;/code&gt; 管理&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;zfs&lt;/code&gt; 工具负责创建、销毁和管理池中的 ZFS 数据集。管理池需要使用 &lt;code&gt;zpool&lt;/code&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】第 19 章：Z 文件系统㈢</title>
+      <link>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%B8%89/</link>
+      <pubDate>Tue, 12 May 2020 10:45:39 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%B8%89/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-zpool.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;193-zpool-管理&#34;&gt;19.3 &lt;code&gt;zpool&lt;/code&gt; 管理&lt;/h2&gt;
+&lt;p&gt;ZFS 管理主要通过两个工具实现。&lt;code&gt;zpool&lt;/code&gt; 工具负责操作池和添加、删除、替换、管理磁盘。&lt;a href=&#34;https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%9B%9B/&#34;&gt;&lt;code&gt;zfs&lt;/code&gt;&lt;/a&gt; 工具负责创建、销毁和管理数据集，包括&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-term.html#zfs-term-filesystem&#34;&gt;文件系统&lt;/a&gt;和&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-term.html#zfs-term-volume&#34;&gt;卷&lt;/a&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】第 19 章：Z 文件系统㈡</title>
+      <link>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BA%8C/</link>
+      <pubDate>Mon, 11 May 2020 22:57:35 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BA%8C/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-quickstart.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;192-快速体验指南&#34;&gt;19.2 快速体验指南&lt;/h2&gt;
+&lt;p&gt;有一种启动机制可以让 FreeBSD 在系统初始化阶段加载 ZFS 池。将下行添加至 &lt;code&gt;/etc/rc.conf&lt;/code&gt;：&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】第 19 章：Z 文件系统㈠</title>
+      <link>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%B8%80/</link>
+      <pubDate>Mon, 11 May 2020 22:36:35 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%B8%80/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;由 Tom Rhodes、Allan Jude、Benedict Reuschling 和 Warren Block 编写。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;吐槽：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这帮大佬肯定都是技术宅！文档写得干干巴巴、麻麻咧咧。翻译起来脑壳疼！&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】SAML 是什么</title>
+      <link>https://szen.in/2020/03/SAML%E6%98%AF%E4%BB%80%E4%B9%88/</link>
+      <pubDate>Fri, 13 Mar 2020 12:07:44 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/03/SAML%E6%98%AF%E4%BB%80%E4%B9%88/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.cloudflare.com/learning/access-management/what-is-saml/&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;saml-是什么&#34;&gt;SAML 是什么？&lt;/h2&gt;
+&lt;p&gt;安全断言标记语言（Security Assertion Markup Language，SAML)，是一种告诉外部应用程序和服务究竟谁才是自身目标用户的标准化方法。基于 SAML，用户只需认证一次便可在多项应用程序中保持身份。由此单点登录（Single Sign-On，SSO）技术才得以实践。当下 SAML 的最新版本是 SAML 2.0。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】如何将 s6-svscan 用作初始进程</title>
+      <link>https://szen.in/2016/09/%E5%A6%82%E4%BD%95%E5%B0%86s6-svscan%E7%94%A8%E4%BD%9C%E5%88%9D%E5%A7%8B%E8%BF%9B%E7%A8%8B/</link>
+      <pubDate>Thu, 29 Sep 2016 09:32:36 +0000</pubDate>
+      
+      <guid>https://szen.in/2016/09/%E5%A6%82%E4%BD%95%E5%B0%86s6-svscan%E7%94%A8%E4%BD%9C%E5%88%9D%E5%A7%8B%E8%BF%9B%E7%A8%8B/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://skarnet.org/software/s6/s6-svscan-1.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;2015 年 6 月 17 日之后，如果你是 Linux 用户，你可以使用 &lt;a href=&#34;http://skarnet.org/software/s6-linux-init/&#34;&gt;s6-linux-init&lt;/a&gt; 包来帮助你实现同样的目标！尽管如此，还是请你首先阅读本篇文档，以理解 s6-linux-init 的工作内容。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;将 s6-svscan 用作初始进程是可行的。但这并不意味着你可以直接通过 s6-svscan &lt;strong&gt;引导&lt;/strong&gt;，因为它还无法胜任完整的初始化系统所应做地全部工作。正确地替换掉初始进程，还需要对其工作内容做更多地理解。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】Docker 和 S6 ——我的进程管理器新欢</title>
+      <link>https://szen.in/2016/09/Docker%E5%92%8CS6%E6%88%91%E7%9A%84%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86%E5%99%A8%E6%96%B0%E6%AC%A2/</link>
+      <pubDate>Thu, 29 Sep 2016 05:50:04 +0000</pubDate>
+      
+      <guid>https://szen.in/2016/09/Docker%E5%92%8CS6%E6%88%91%E7%9A%84%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86%E5%99%A8%E6%96%B0%E6%AC%A2/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://blog.tutum.co/2014/12/02/docker-and-s6-my-new-favorite-process-supervisor/&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;在&lt;a href=&#34;https://blog.tutum.co/2014/10/28/the-5-most-important-things-ive-learned-from-using-docker/&#34;&gt;我之前的博文&lt;/a&gt;中，我描述了我是如何在容器中使用进程管理器的，并做了一些展开。但我还是觉得有必要针对 &lt;a href=&#34;http://skarnet.org/software/s6/&#34;&gt;Laurent Bercot 开发的 S6&lt;/a&gt; 做更详尽的说明。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】使用 Docker 的 5 大心得</title>
+      <link>https://szen.in/2016/09/%E4%BD%BF%E7%94%A8Docker%E7%9A%845%E5%A4%A7%E5%BF%83%E5%BE%97/</link>
+      <pubDate>Thu, 29 Sep 2016 04:25:19 +0000</pubDate>
+      
+      <guid>https://szen.in/2016/09/%E4%BD%BF%E7%94%A8Docker%E7%9A%845%E5%A4%A7%E5%BF%83%E5%BE%97/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://blog.tutum.co/2014/10/28/the-5-most-important-things-ive-learned-from-using-docker/&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在近一年多的时间里，我在多个平台上都频繁地使用了 Docker （包括本地 Linux 和云服务）。也因此学会了如何管理我的镜像，如何构建跨平台的弹性镜像，甚至于如何编写“非 Docker 特定”的程序。最终，我整理了五条便于理解的心得，以便于后继的新 Docker （甚至不是 Docker）的项目。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】Baseimage-docker，胖容器和“容器也是虚拟机”</title>
+      <link>https://szen.in/2016/09/Baseimage-docker%E8%83%96%E5%AE%B9%E5%99%A8%E5%92%8C%E5%AE%B9%E5%99%A8%E4%B9%9F%E6%98%AF%E8%99%9A%E6%8B%9F%E6%9C%BA/</link>
+      <pubDate>Thu, 29 Sep 2016 02:45:27 +0000</pubDate>
+      
+      <guid>https://szen.in/2016/09/Baseimage-docker%E8%83%96%E5%AE%B9%E5%99%A8%E5%92%8C%E5%AE%B9%E5%99%A8%E4%B9%9F%E6%98%AF%E8%99%9A%E6%8B%9F%E6%9C%BA/</guid>
+      <description>&lt;p&gt;作者 Hongli Lai 看着像是华人，可惜没找到文章的中文版本，于是就很土鳖地手翻了一遍。文章的措辞很口语化，因此意译为主。&lt;a href=&#34;https://blog.phusion.nl/2015/01/20/baseimage-docker-fat-containers-treating-containers-vms/&#34;&gt;点击这里可以阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;http://phusion.github.io/baseimage-docker/&#34;&gt;Baseimage-docker&lt;/a&gt; 是针对 Docker 优化地 Ubuntu 最小化基础镜像。我们可以&lt;a href=&#34;https://index.docker.io/u/phusion/baseimage/&#34;&gt;从 Docker 仓库中拉取回来&lt;/a&gt;作为基础镜像用在自己的镜像中。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】Docker 和子进程“僵尸化”问题</title>
+      <link>https://szen.in/2016/09/Docker%E5%92%8C%E5%AD%90%E8%BF%9B%E7%A8%8B%E5%83%B5%E5%B0%B8%E5%8C%96%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 28 Sep 2016 11:59:52 +0000</pubDate>
+      
+      <guid>https://szen.in/2016/09/Docker%E5%92%8C%E5%AD%90%E8%BF%9B%E7%A8%8B%E5%83%B5%E5%B0%B8%E5%8C%96%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;作者 Hongli Lai 看着像是华人，可惜没找到文章的中文版本，于是就很土鳖地手翻了一遍。文章的措辞很口语化，因此意译为主。&lt;a href=&#34;https://blog.phusion.nl/2015/01/20/docker-and-the-pid-1-zombie-reaping-problem/&#34;&gt;点击这里可以阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;在构建 Docker 容器时，我们需要注意子进程的“僵尸化”问题（PID 1 Zombie Reaping Problem）。这会导致不可预知的和看起来匪夷所思的问题。本文解释了这个问题，也解释了如何去解决，并提供了一种预构建方案：Baseimage-docker 。&lt;/p&gt;
+&lt;p&gt;在通篇阅读之后，还有第二篇：&lt;a href=&#34;https://blog.phusion.nl/2015/01/20/baseimage-docker-fat-containers-treating-containers-vms/&#34;&gt;《Baseimage-docker，胖容器和“容器也是虚拟机”》&lt;/a&gt;。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

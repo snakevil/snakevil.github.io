@@ -1,0 +1,927 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>【译】第 19 章：Z 文件系统㈡ | 天天蜕皮的大蛇 Re</title>
+    <meta property="og:title" content="【译】第 19 章：Z 文件系统㈡ - 天天蜕皮的大蛇 Re">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2020-05-11T22:57:35&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2020-05-11T22:57:35&#43;08:00'>
+        
+    <meta name="Keywords" content="">
+    <meta name="description" content="【译】第 19 章：Z 文件系统㈡">
+        
+    <meta name="author" content="Snakevil">
+    <meta property="og:url" content="https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BA%8C/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://szen.in/">
+                        天天蜕皮的大蛇 Re
+                    </a>
+                
+                <p class="description">当下这个时代里最昂贵的，无过于代表了自我记忆的信息数据。</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://szen.in/">首页</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 40px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border-right: 1px solid #ddd;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        word-wrap: break-word;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content > nav > ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content li {
+        margin: 0.5em 0;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print, screen and (max-width: 1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#192-快速体验指南">19.2 快速体验指南</a></li>
+    <li><a href="#1921-单磁盘池">19.2.1 单磁盘池</a></li>
+    <li><a href="#1922-raid-z">19.2.2 RAID-Z</a></li>
+    <li><a href="#1923-恢复-raid-z">19.2.3 恢复 RAID-Z</a></li>
+    <li><a href="#1924-数据效验">19.2.4 数据效验</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if (leftPos < 220) {
+                postToc.css({
+                    width: leftPos - 10,
+                    "margin-left": 0 - leftPos,
+                });
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t,
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20,
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process);
+            });
+        }
+    });
+</script>
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">【译】第 19 章：Z 文件系统㈡</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年5月11日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"
+                ><a href='https://szen.in/category/Linux'
+                    >Linux</a
+                ></span
+            >
+            
+            <span class="meta-category"
+                ><a href='https://szen.in/category/%E5%8D%9A%E9%97%BB%E5%B9%BF%E8%AE%B0'
+                    >博闻广记</a
+                ></span
+            >
+            
+        </div>
+          
+        <div class="clear" style="display: none;">
+            <div class="toc-article">
+                <div class="toc-title">文章目录</div>
+            </div>
+        </div>
+        
+        <div class="post-content">
+            <p><a href="https://www.freebsd.org/doc/handbook/zfs-quickstart.html">点击这里阅读原文。</a></p>
+<hr>
+<h2 id="192-快速体验指南">19.2 快速体验指南</h2>
+<p>有一种启动机制可以让 FreeBSD 在系统初始化阶段加载 ZFS 池。将下行添加至 <code>/etc/rc.conf</code>：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#50fa7b">zfs_enable</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;YES&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>然后启动服务，可以激活这一机制。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">service zfs start
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="1921-单磁盘池">19.2.1 单磁盘池</h2>
+<p>使用单磁盘设备可以创建一个简单的非冗余池：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">zpool create example /dev/da0
+</code></pre></td></tr></table>
+</div>
+</div><p>通过 <code>df</code> 的输出我们可以看到这个新池：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">df
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>Filesystem  1K-blocks    Used    Avail Capacity  Mounted on
+/dev/ad0s1a   2026030  235230  1628718    13%    /
+devfs               1       1        0   100%    /dev
+/dev/ad0s1d  54098308 1032846 48737598     2%    /usr
+example      17547136       0 17547136     0%    /example
+</code></pre><p><code>example</code> 这个池就已经被创建并挂在了。现在可以以文件系统的方式进行操作。如创建并查看文件：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8be9fd;font-style:italic">cd</span> /example
+ls
+touch testfile
+ls -al
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>total 4
+drwxr-xr-x   2 root  wheel    3 Aug 29 23:15 .
+drwxr-xr-x  21 root  wheel  512 Aug 29 23:12 ..
+-rw-r--r--   1 root  wheel    0 Aug 29 23:15 testfile
+</code></pre><p>此时池还未开启任何 ZFS 的特性。在池中创建一个数据集并开启压缩：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">zfs create example/compressed
+zfs <span style="color:#8be9fd;font-style:italic">set</span> <span style="color:#8be9fd;font-style:italic">compression</span><span style="color:#ff79c6">=</span>gzip example/compressed
+</code></pre></td></tr></table>
+</div>
+</div><p><code>example/compressed</code> 数据集现在就是一个 ZFS 压缩文件系统了。可以试着拷贝一些大文件进去看看效果。</p>
+<p>要关闭压缩可以：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">zfs <span style="color:#8be9fd;font-style:italic">set</span> <span style="color:#8be9fd;font-style:italic">compression</span><span style="color:#ff79c6">=</span>off example/compressed
+</code></pre></td></tr></table>
+</div>
+</div><p>使用 <code>zfs umount</code> 可以卸载一个文件系统，然后通过 <code>df</code> 来确认操作：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">zfs umount example/compressed
+df
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>Filesystem  1K-blocks    Used    Avail Capacity  Mounted on
+/dev/ad0s1a   2026030  235232  1628716    13%    /
+devfs               1       1        0   100%    /dev
+/dev/ad0s1d  54098308 1032864 48737580     2%    /usr
+example      17547008       0 17547008     0%    /example
+</code></pre><p>而再次使用 <code>zfs mount</code> 可以重新再挂载回来：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">zfs mount example/compressed
+df
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>Filesystem         1K-blocks    Used    Avail Capacity  Mounted on
+/dev/ad0s1a          2026030  235234  1628714    13%    /
+devfs                      1       1        0   100%    /dev
+/dev/ad0s1d         54098308 1032864 48737580     2%    /usr
+example             17547008       0 17547008     0%    /example
+example/compressed  17547008       0 17547008     0%    /example/compressed
+</code></pre><p><code>mount</code> 指令的输出中也包含了池和文件系统的信息：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mount
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>/dev/ad0s1a on / (ufs, local)
+devfs on /dev (devfs, local)
+/dev/ad0s1d on /usr (ufs, local, soft-updates)
+example on /example (zfs, local)
+example/compressed on /example/compressed (zfs, local)
+</code></pre><p>ZFS 数据集可以在创建后以任意文件系统的方式进行操作。但还有很多其它特性是针对每个数据集设置的。如下面的例子，<code>data</code> 文件系统需要存储重要文件，因此被配置为每个数据块同时保持两份副本：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">zfs create example/data
+zfs <span style="color:#8be9fd;font-style:italic">set</span> <span style="color:#8be9fd;font-style:italic">copies</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">2</span> example/data
+df
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>Filesystem         1K-blocks    Used    Avail Capacity  Mounted on
+/dev/ad0s1a          2026030  235234  1628714    13%    /
+devfs                      1       1        0   100%    /dev
+/dev/ad0s1d         54098308 1032864 48737580     2%    /usr
+example             17547008       0 17547008     0%    /example
+example/compressed  17547008       0 17547008     0%    /example/compressed
+example/data        17547008       0 17547008     0%    /example/data
+</code></pre><p>请注意，一个池中的每个文件系统都有相同的可用空间。 这也是使用 <code>df</code> 演示的原因，以表明文件系统仅使用其所需的空间大小，且所有空间均来源于同一个池。 ZFS 消除了诸如卷和分区之类的概念，并允许多个文件系统占用同一个池。</p>
+<p>最后是销毁文件系统和不再需要的池：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">zfs destroy example/compressed
+zfs destroy example/data
+zpool destroy example
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="1922-raid-z">19.2.2 RAID-Z</h2>
+<p>磁盘会出错。避免磁盘故障造成数据丢失的一种方法是 RAID。 ZFS 在池设计中也支持此功能。 RAID-Z 池需要三块以上的磁盘，但可以比镜像池提供更多的可用空间。</p>
+<p>指定要添加的磁盘来创建 RAID-Z 池：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">zpool create storage raidz da0 da1 da2
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><strong>注意：</strong></p>
+<p>Sun™ 推荐一个 RAID-Z 配置中使用三到九块磁盘。如果需要十块以上的磁盘来创建一个池，请考量将其拆分成多个小池。如果只有两块硬盘但又需要冗余，请考量使用 ZFS 镜像。更多细节请参阅 <a href="https://www.freebsd.org/cgi/man.cgi?query=zpool&amp;sektion=8&amp;manpath=freebsd-release-ports">zpool(8)</a> 帮助文档。</p>
+</blockquote>
+<p>这样就创建了 <code>storage</code> 池，接下来是在池中创建 <code>home</code> 文件系统：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">zfs create storage/home
+</code></pre></td></tr></table>
+</div>
+</div><p>也开启压缩和多副本：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">zfs <span style="color:#8be9fd;font-style:italic">set</span> <span style="color:#8be9fd;font-style:italic">copies</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">2</span> storage/home
+zfs <span style="color:#8be9fd;font-style:italic">set</span> <span style="color:#8be9fd;font-style:italic">compression</span><span style="color:#ff79c6">=</span>gzip storage/home
+</code></pre></td></tr></table>
+</div>
+</div><p>将用户数据复制进来并符号链接回去，这样这个目录就成了新的用户目录：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cp -rp /home/* /storage/home
+rm -rf /home /usr/home
+ln -s /storage/home /home
+ln -s /storage/home /usr/home
+</code></pre></td></tr></table>
+</div>
+</div><p>可以尝试创建一个新用户，其数据应该也是存储在 <code>/storage/home</code> 中。</p>
+<p>创建一个可以回滚的文件系统快照：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">zfs snapshot storage/home@08-30-08
+</code></pre></td></tr></table>
+</div>
+</div><p>只有文件系统才能创建快照，目录和文件是做不到的。</p>
+<p><code>@</code> 字符之后是快照的名称。如果不小心删掉了某个重要文件夹，也可以在备份文件系统后将其回滚至删除前的快照：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">zfs rollback storage/home@08-30-08
+</code></pre></td></tr></table>
+</div>
+</div><p>使用 <code>ls</code> 查看文件系统的 <code>.zfs/snapshot</code> 目录，可以列举全部可用的快照：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ls /storage/home/.zfs/snapshot
+</code></pre></td></tr></table>
+</div>
+</div><p>通过编写脚本可以自动定期给用户数据生成快照。但久而久之，大量的磁盘空间都会被快照占用。这样就可以删除一些快照：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">zfs destroy storage/home@08-30-08
+</code></pre></td></tr></table>
+</div>
+</div><p>完成测试后，可以直接将 <code>/storage/home</code> 挂载至 <code>/home</code>：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">zfs <span style="color:#8be9fd;font-style:italic">set</span> <span style="color:#8be9fd;font-style:italic">mountpoint</span><span style="color:#ff79c6">=</span>/home storage/home
+</code></pre></td></tr></table>
+</div>
+</div><p>这时系统会将其视作真正的 <code>/home</code>：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">mount
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>/dev/ad0s1a on / (ufs, local)
+devfs on /dev (devfs, local)
+/dev/ad0s1d on /usr (ufs, local, soft-updates)
+storage on /storage (zfs, local)
+storage/home on /home (zfs, local)
+</code></pre><div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">df
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>Filesystem   1K-blocks    Used    Avail Capacity  Mounted on
+/dev/ad0s1a    2026030  235240  1628708    13%    /
+devfs                1       1        0   100%    /dev
+/dev/ad0s1d   54098308 1032826 48737618     2%    /usr
+storage       26320512       0 26320512     0%    /storage
+storage/home  26320512       0 26320512     0%    /home
+</code></pre><p>这样就完成了 RAID-Z 的配置。将下面的配置添加到 <code>/etc/periodic.conf</code>，可以在每晚自动生成的 <a href="https://www.freebsd.org/cgi/man.cgi?query=periodic&amp;sektion=8&amp;manpath=freebsd-release-ports">periodic(8)</a> 报告中加上 ZFS 文件系统的每日状态更新的信息：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#50fa7b">daily_status_zfs_enable</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;YES&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="1923-恢复-raid-z">19.2.3 恢复 RAID-Z</h2>
+<p>每种软件级 RAID 都有各自的方法来监控中泰。RAID-Z 设备的状态可以这样查看：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">zpool status -x
+</code></pre></td></tr></table>
+</div>
+</div><p>如果所有的池都是<a href="https://www.freebsd.org/doc/handbook/zfs-term.html#zfs-term-online">联网</a>状态，也没有任何问题，就应该输出：</p>
+<pre><code>all pools are healthy
+</code></pre><p>如果某个磁盘成了<a href="https://www.freebsd.org/doc/handbook/zfs-term.html#zfs-term-offline">离线</a>状态，那么池的状态信息应该看起来是这个样子：</p>
+<pre><code>  pool: storage
+ state: DEGRADED
+status: One or more devices has been taken offline by the administrator.
+	Sufficient replicas exist for the pool to continue functioning in a
+	degraded state.
+action: Online the device using 'zpool online' or replace the device with
+	'zpool replace'.
+ scrub: none requested
+config:
+
+	NAME        STATE     READ WRITE CKSUM
+	storage     DEGRADED     0     0     0
+	  raidz1    DEGRADED     0     0     0
+	    da0     ONLINE       0     0     0
+	    da1     OFFLINE      0     0     0
+	    da2     ONLINE       0     0     0
+
+errors: No known data errors
+</code></pre><p>原来是管理员之前通过这个指令将设备离线了：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">zpool offline storage da1
+</code></pre></td></tr></table>
+</div>
+</div><p>以在系统关机后替换掉 <code>da1</code>。然后等系统重新开机后，就可以在池中替换掉故障的磁盘：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">zpool replace storage da1
+</code></pre></td></tr></table>
+</div>
+</div><p>再次检查状态，不带 <code>-x</code> 参数时会呈现全部池的状态：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">zpool status storage
+</code></pre></td></tr></table>
+</div>
+</div><pre><code> pool: storage
+ state: ONLINE
+ scrub: resilver completed with 0 errors on Sat Aug 30 19:44:11 2008
+config:
+
+	NAME        STATE     READ WRITE CKSUM
+	storage     ONLINE       0     0     0
+	  raidz1    ONLINE       0     0     0
+	    da0     ONLINE       0     0     0
+	    da1     ONLINE       0     0     0
+	    da2     ONLINE       0     0     0
+
+errors: No known data errors
+</code></pre><p>恢复正常工作了。</p>
+<h2 id="1924-数据效验">19.2.4 数据效验</h2>
+<p>ZFS 使用效验值来验证存储数据的完整性。这个机制在创建文件系统时便会自动启用。</p>
+<blockquote>
+<p><strong>警告：</strong></p>
+<p>虽然可以禁用效验值，但我们非常不推荐这种行为！效验值只需要极少的存储空间便足以提供数据的完整性。而且很多其它的 ZFS 特性也依赖于效验值机制。禁用效验值并不会显著地提高性能。</p>
+</blockquote>
+<p>效验值验证的行为被成为 <em>清理</em>。使用以下指令可以验证 <code>storage</code> 池的数据完整性：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">zpool scrub storage
+</code></pre></td></tr></table>
+</div>
+</div><p>清理的耗时视数据存储量而定。数据量大时会按比例花费更长的时间进行验证。清理非常消耗 I/O，一次只能运行一次。清理完成后，池状态应该是这个样子：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">zpool status storage
+</code></pre></td></tr></table>
+</div>
+</div><pre><code> pool: storage
+ state: ONLINE
+ scrub: scrub completed with 0 errors on Sat Jan 26 19:57:37 2013
+config:
+
+	NAME        STATE     READ WRITE CKSUM
+	storage     ONLINE       0     0     0
+	  raidz1    ONLINE       0     0     0
+	    da0     ONLINE       0     0     0
+	    da1     ONLINE       0     0     0
+	    da2     ONLINE       0     0     0
+
+errors: No known data errors
+</code></pre><p>可以根据上次清理操作的完成时间来判断是否需要再次清理。例行清理有助于保护数据遭受无提示性破坏，保障池的完整性。</p>
+<p>其它 ZFS 选项请参阅 <a href="https://www.freebsd.org/cgi/man.cgi?query=zfs&amp;sektion=8&amp;manpath=freebsd-release-ports">zfs(8)</a> 和 <a href="https://www.freebsd.org/cgi/man.cgi?query=zpool&amp;sektion=8&amp;manpath=freebsd-release-ports">zpool(8)</a> 的参考文档。</p>
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://szen.in/">Snakevil</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BA%8C/">https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BA%8C/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+ 
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%85%AD/">【译】第 19 章：Z 文件系统㈥</a></li>
+        
+        <li><a href="/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BA%94/">【译】第 19 章：Z 文件系统㈤</a></li>
+        
+        <li><a href="/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%9B%9B/">【译】第 19 章：Z 文件系统㈣</a></li>
+        
+        <li><a href="/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%B8%89/">【译】第 19 章：Z 文件系统㈢</a></li>
+        
+        <li><a href="/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%B8%80/">【译】第 19 章：Z 文件系统㈠</a></li>
+        
+    </ul>
+</div>
+
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li>
+                    <a href='https://szen.in/tag/ZFS'
+                        >ZFS</a
+                    >
+                </li>
+                
+                <li>
+                    <a href='https://szen.in/tag/FreeBSD'
+                        >FreeBSD</a
+                    >
+                </li>
+                
+                <li>
+                    <a href='https://szen.in/tag/Linux'
+                        >Linux</a
+                    >
+                </li>
+                
+                <li>
+                    <a href='https://szen.in/tag/%E8%87%AA%E4%B8%BB%E7%BF%BB%E8%AF%91'
+                        >自主翻译</a
+                    >
+                </li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "snakevil/blog.hugo"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://szen.in/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%85%AD/" title="【译】第 19 章：Z 文件系统㈥">【译】第 19 章：Z 文件系统㈥</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BA%94/" title="【译】第 19 章：Z 文件系统㈤">【译】第 19 章：Z 文件系统㈤</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%9B%9B/" title="【译】第 19 章：Z 文件系统㈣">【译】第 19 章：Z 文件系统㈣</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%B8%89/" title="【译】第 19 章：Z 文件系统㈢">【译】第 19 章：Z 文件系统㈢</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BA%8C/" title="【译】第 19 章：Z 文件系统㈡">【译】第 19 章：Z 文件系统㈡</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%B8%80/" title="【译】第 19 章：Z 文件系统㈠">【译】第 19 章：Z 文件系统㈠</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/2020/05/%E5%B0%86HPE-ProLiant-Gen10-X3421%E6%89%93%E9%80%A0%E6%88%90%E5%8A%A0%E5%BC%BA%E7%89%88NAS/" title="将 HPE ProLiant Gen10 X3421 打造成加强版 NAS">将 HPE ProLiant Gen10 X3421 打造成加强版 NAS</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/2020/05/%E6%AF%AB%E6%97%A0%E9%9A%90%E7%A7%81%E5%8F%AF%E8%A8%80%E7%9A%84cn%E5%9F%9F%E5%90%8DWHOIS%E4%BF%A1%E6%81%AF/" title="毫无隐私可言的 .cn 域名 WHOIS 信息">毫无隐私可言的 .cn 域名 WHOIS 信息</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/2020/03/SAML%E6%98%AF%E4%BB%80%E4%B9%88/" title="【译】SAML 是什么">【译】SAML 是什么</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/2017/04/GNUMake%E4%BD%BF%E7%94%A8%E9%9D%99%E6%80%81%E6%A8%A1%E5%BC%8F%E8%A7%84%E5%88%99/" title="GNUMake 使用静态模式规则">GNUMake 使用静态模式规则</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://szen.in/category/Docker/">Docker (5)</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/category/Linux/">Linux (8)</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/category/%E5%8D%9A%E9%97%BB%E5%B9%BF%E8%AE%B0/">博闻广记 (7)</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/category/%E5%AE%B6%E5%BA%AD%E7%BB%84%E7%BD%91/">家庭组网 (2)</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/category/%E5%BC%80%E5%8F%91%E6%8A%80%E5%B7%A7/">开发技巧 (6)</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/category/%E6%9D%82%E8%B0%88%E6%97%A5%E8%AE%B0/">杂谈日记 (2)</a>
+    </li>
+    
+</ul>
+
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://szen.in/tag/Aria2/">Aria2</a>
+    
+    <a href="https://szen.in/tag/CNNIC/">CNNIC</a>
+    
+    <a href="https://szen.in/tag/Dnsmasq/">Dnsmasq</a>
+    
+    <a href="https://szen.in/tag/Docker/">Docker</a>
+    
+    <a href="https://szen.in/tag/FreeBSD/">FreeBSD</a>
+    
+    <a href="https://szen.in/tag/FreeNAS/">FreeNAS</a>
+    
+    <a href="https://szen.in/tag/GNUMake/">GNUMake</a>
+    
+    <a href="https://szen.in/tag/Git/">Git</a>
+    
+    <a href="https://szen.in/tag/Gitolite/">Gitolite</a>
+    
+    <a href="https://szen.in/tag/GnuPG2/">GnuPG2</a>
+    
+    <a href="https://szen.in/tag/HDD/">HDD</a>
+    
+    <a href="https://szen.in/tag/HPE/">HPE</a>
+    
+    <a href="https://szen.in/tag/ICANN/">ICANN</a>
+    
+    <a href="https://szen.in/tag/LigHTTPd/">LigHTTPd</a>
+    
+    <a href="https://szen.in/tag/Linux/">Linux</a>
+    
+    <a href="https://szen.in/tag/Lua/">Lua</a>
+    
+    <a href="https://szen.in/tag/MiniDLNA/">MiniDLNA</a>
+    
+    <a href="https://szen.in/tag/MiniUPnPd/">MiniUPnPd</a>
+    
+    <a href="https://szen.in/tag/MoonScript/">MoonScript</a>
+    
+    <a href="https://szen.in/tag/NAS/">NAS</a>
+    
+    <a href="https://szen.in/tag/Nextcloud/">Nextcloud</a>
+    
+    <a href="https://szen.in/tag/Nginx/">Nginx</a>
+    
+    <a href="https://szen.in/tag/OpenWRT/">OpenWRT</a>
+    
+    <a href="https://szen.in/tag/Plex/">Plex</a>
+    
+    <a href="https://szen.in/tag/ProLiant/">ProLiant</a>
+    
+    <a href="https://szen.in/tag/RAID/">RAID</a>
+    
+    <a href="https://szen.in/tag/S6/">S6</a>
+    
+    <a href="https://szen.in/tag/SAML/">SAML</a>
+    
+    <a href="https://szen.in/tag/SSD/">SSD</a>
+    
+    <a href="https://szen.in/tag/SSO/">SSO</a>
+    
+    <a href="https://szen.in/tag/Samba/">Samba</a>
+    
+    <a href="https://szen.in/tag/Seafile/">Seafile</a>
+    
+    <a href="https://szen.in/tag/Stow/">Stow</a>
+    
+    <a href="https://szen.in/tag/Syncthing/">Syncthing</a>
+    
+    <a href="https://szen.in/tag/Ubuntu/">Ubuntu</a>
+    
+    <a href="https://szen.in/tag/WHOIS/">WHOIS</a>
+    
+    <a href="https://szen.in/tag/ZFS/">ZFS</a>
+    
+    <a href="https://szen.in/tag/crontab/">crontab</a>
+    
+    <a href="https://szen.in/tag/ipset/">ipset</a>
+    
+    <a href="https://szen.in/tag/ownCloud/">ownCloud</a>
+    
+    <a href="https://szen.in/tag/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/">我的世界</a>
+    
+    <a href="https://szen.in/tag/%E7%B3%BB%E7%BB%9F%E6%9E%84%E5%BB%BA/">系统构建</a>
+    
+    <a href="https://szen.in/tag/%E8%87%AA%E4%B8%BB%E7%BF%BB%E8%AF%91/">自主翻译</a>
+    
+</div>
+
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://szen.in/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+    <div class="container">
+        &copy; 2020 <a href="https://szen.in/">天天蜕皮的大蛇 Re by Snakevil</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/flysnow-org/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+
+
+
+</body>
+
+</html>

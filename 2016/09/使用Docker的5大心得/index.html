@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>【译】使用 Docker 的 5 大心得 | 天天蜕皮的大蛇 Re</title>
+    <meta property="og:title" content="【译】使用 Docker 的 5 大心得 - 天天蜕皮的大蛇 Re">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2016-09-29T04:25:19&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2016-09-29T04:25:19&#43;08:00'>
+        
+    <meta name="Keywords" content="">
+    <meta name="description" content="【译】使用 Docker 的 5 大心得">
+        
+    <meta name="author" content="Snakevil">
+    <meta property="og:url" content="https://szen.in/2016/09/%E4%BD%BF%E7%94%A8Docker%E7%9A%845%E5%A4%A7%E5%BF%83%E5%BE%97/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://szen.in/">
+                        天天蜕皮的大蛇 Re
+                    </a>
+                
+                <p class="description">当下这个时代里最昂贵的，无过于代表了自我记忆的信息数据。</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://szen.in/">首页</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 40px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border-right: 1px solid #ddd;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        word-wrap: break-word;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content > nav > ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content li {
+        margin: 0.5em 0;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print, screen and (max-width: 1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#1-明晰细节以及一点点偏执才能动手构建镜像">1. 明晰细节（以及一点点偏执）才能动手构建镜像</a></li>
+    <li><a href="#2-我们无从了解他人系统的工作机制">2. 我们无从了解他人系统的工作机制</a></li>
+    <li><a href="#3-写-dockerfile-很折腾但之后能省很多事">3. 写 Dockerfile 很折腾，但之后能省很多事</a></li>
+    <li><a href="#4-不管是不是用-docker派生进程都需要慎重">4. 不管是不是用 Docker，派生进程都需要慎重</a></li>
+    <li><a href="#5-一个容器一个任务并不-_等同_-于一个容器一个进程">5. 一个容器一个任务并不 <em>等同</em> 于一个容器一个进程</a></li>
+    <li><a href="#结语">结语</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if (leftPos < 220) {
+                postToc.css({
+                    width: leftPos - 10,
+                    "margin-left": 0 - leftPos,
+                });
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t,
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20,
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process);
+            });
+        }
+    });
+</script>
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">【译】使用 Docker 的 5 大心得</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2016年9月29日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"
+                ><a href='https://szen.in/category/Docker'
+                    >Docker</a
+                ></span
+            >
+            
+        </div>
+          
+        <div class="clear" style="display: none;">
+            <div class="toc-article">
+                <div class="toc-title">文章目录</div>
+            </div>
+        </div>
+        
+        <div class="post-content">
+            <p><a href="https://blog.tutum.co/2014/10/28/the-5-most-important-things-ive-learned-from-using-docker/">点击这里阅读原文。</a></p>
+<hr>
+<h2 id="前言">前言</h2>
+<p>在近一年多的时间里，我在多个平台上都频繁地使用了 Docker （包括本地 Linux 和云服务）。也因此学会了如何管理我的镜像，如何构建跨平台的弹性镜像，甚至于如何编写“非 Docker 特定”的程序。最终，我整理了五条便于理解的心得，以便于后继的新 Docker （甚至不是 Docker）的项目。</p>
+<h2 id="1-明晰细节以及一点点偏执才能动手构建镜像">1. 明晰细节（以及一点点偏执）才能动手构建镜像</h2>
+<p>不用使用 root 帐号来跑应用程序。绝大多数的服务软件包都会在安装时创建一个相应的系统帐号。比如 Apache 在安装时，会创建名为 http 或 apache 或 www-data 的系统帐号。</p>
+<p>我之前有这样一个项目，通过源代码编译 ejabberd ，使用构建脚本来创建名为 xmpp 的系统帐号，使用 Docker 的 Automated Builds 服务来确保最终镜像里的 ubuntu 是最新的。</p>
+<p>但期间有一个低级错误，我直接用 <code>FROM ubuntu</code> 而非 <code>FROM ubuntu:12.04</code> 。因此有一天，最终镜像里的 Ubuntu 升级到了 14.04 的版本（新增了一个系统帐号），因而 xmpp 系统帐号 UID 也变了。使用这个版本的镜像启动容器时，外部卷因为 UID 不一致就无法读写了。</p>
+<p>这教育了我两个道理：</p>
+<ol>
+<li>创建任何 Docker 镜像时都应该指定基础镜像的版本；</li>
+<li>任何情况下都应该有一份启动脚本来自我矫正。</li>
+</ol>
+<p>启动脚本以 root 帐号启动并完成如下工作：</p>
+<ul>
+<li>确保必要的配置文件存在——没准外部卷挂载失误就导致配置丢失了；</li>
+<li>chown 相应的目录和文件确保可以被正确地读写。</li>
+</ul>
+<p>最终我因此而节约了大量的时间。我对基础镜像十分了解，我也通过启动脚本确保了环境是可靠的（而非直接将主程序硬上 ENTRYPOINT）。</p>
+<h2 id="2-我们无从了解他人系统的工作机制">2. 我们无从了解他人系统的工作机制</h2>
+<p>直到现在，我仍然只使用最新版本的 Ubuntu 作为基础镜像。因为在使用了一些所谓的云服务之后，我学到了以下几点：</p>
+<ul>
+<li>不是每个人都会运行最新版本的 Docker；</li>
+<li>不同版本的 Docker 提供的功能是不一样的；</li>
+<li>大多数人都没有 Docker 服务环境的 root 权限。</li>
+</ul>
+<p>这极大地改变了我构建 Docker 镜像时出习惯——我不再在说明里写“启动容器时请添加选项 &ndash;volumes-from”，或者“需要一个名为 DB 的关联容器”——因为我不知道其他人会在什么环境下使用我的镜像。我开始尽可能地让镜像变得更弹性化。如果镜像需要 MySQL 数据库，那么优先使用关联容器，其次是用于指明链接信息的环境变量，等等。</p>
+<p>这会增加很多前置工作，但我觉得是有价值的。比如使用一个 MySQL 代理容器来链接到真实的 MySQL 数据库，然后使用 link 选项将主容器关联上去。这很有用！</p>
+<h2 id="3-写-dockerfile-很折腾但之后能省很多事">3. 写 Dockerfile 很折腾，但之后能省很多事</h2>
+<p>要创建 Docker 镜像有两种方法。一是创建一个基础容器，然后在其中通过命令交互来完善。当容器能够如我预期的方式运转时，通过打标签（tag）地方式来生成镜像。</p>
+<p>这种方式相对更简单。我可以通过安装包提供的向导工具完成配置，然后使用顺手的编辑器来修改配置。</p>
+<p>另一种方式是 Dockerfile，刚开始是会让人非常不习惯。如果安装包有交互提示时会发生什么？如何通过命令来编辑文件？这个过程很微妙，所有的操作都是自动完成的，无法人工干预。</p>
+<p>我的个人体会，是优大于劣。我已经无数次地发现：在我手工配置好镜像后，我忘记了我究竟干过什么。而 Dockerfile 可以将其中的过程精确地展示给所有人。而且基于此，我还可以通过版本控制系统来进一步的管理 Dockerfile 。是的，我们需要做更多的工作才能用 Dockerfile 来构建镜像，但我现在只用这种方法了。</p>
+<h2 id="4-不管是不是用-docker派生进程都需要慎重">4. 不管是不是用 Docker，派生进程都需要慎重</h2>
+<p>应用程序在执行时会派生子进程，这种事情并不稀奇。我自己的程序也尝尝会做这样的事情。在大多数的系统里，我可以派生进程，读取输出内容，检查结束状态，或者什么别的。初始化系统会在这些进程结束时自动清理。多年以来，我几乎都是下意识地就会这么做。</p>
+<p>但很多情况下，Docker 容器并不会跑任何的初始化系统，因此派生进程会最终变成“僵尸进程”，继续占据系统资源无法释放。我知道该如何在程序中有效地监视并销毁一个进程，但那些在他们的 Docker 镜像里使用我的程序的人并不知道。我们永远也不知道我们的程序会在什么情况下被使用。</p>
+<h2 id="5-一个容器一个任务并不-_等同_-于一个容器一个进程">5. 一个容器一个任务并不 <em>等同</em> 于一个容器一个进程</h2>
+<p>这是一个有争议的观念。如果在 Freenode 的 #docker 频道里，咨询关于容器内部进程管理地问题，我们会得到各种迥异的回答。基本上每个人都赞同一个容器应该只执行一个任务，但这是否意味着就应该是一个进程，众说纷纭。</p>
+<p>但当我明确什么是任务，和任务需要哪些程序之后，我认为使用进程管理器（如 supervisord、runit 或 s6）完全是可以接受的。对于 web 应用程序来说，这尤为必要，因为我们经常会需要为 Apache 或 Nginx 编写特定的 rewrite 规则。</p>
+<p>比如，某套 web 应用程序需要 PHP-FPM、Nginx、Cron 和 MySQL。那么我会在一个容器里运行 PHP-FPM 、Nginx 和 Cron，在另一个容器里运行 MySQL 。当某个关键进程结束或崩溃时，进程管理器能够干净地清理然后重启相关进程。这就避免了在主进程结束时 Docker 容器也会停止地尴尬。</p>
+<h2 id="结语">结语</h2>
+<p>我真诚地希望这些经验可以帮助你们更好的使用 Docker。基于容器的工作方式改变了我构建软件的习惯，而不同 Docker 平台又让我改变了构建容器的习惯。</p>
+<p>如果你也有使用 Docker 的经验，我很乐意向你学习！你可以使用下面的评论功能来分享你的故事和心得，或者其它的反馈方式。感谢阅读！</p>
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://szen.in/">Snakevil</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://szen.in/2016/09/%E4%BD%BF%E7%94%A8Docker%E7%9A%845%E5%A4%A7%E5%BF%83%E5%BE%97/">https://szen.in/2016/09/%E4%BD%BF%E7%94%A8Docker%E7%9A%845%E5%A4%A7%E5%BF%83%E5%BE%97/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+ 
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/2016/09/%E5%A6%82%E4%BD%95%E5%B0%86s6-svscan%E7%94%A8%E4%BD%9C%E5%88%9D%E5%A7%8B%E8%BF%9B%E7%A8%8B/">【译】如何将 s6-svscan 用作初始进程</a></li>
+        
+        <li><a href="/2016/09/Docker%E5%92%8CS6%E6%88%91%E7%9A%84%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86%E5%99%A8%E6%96%B0%E6%AC%A2/">【译】Docker 和 S6 ——我的进程管理器新欢</a></li>
+        
+        <li><a href="/2016/09/Baseimage-docker%E8%83%96%E5%AE%B9%E5%99%A8%E5%92%8C%E5%AE%B9%E5%99%A8%E4%B9%9F%E6%98%AF%E8%99%9A%E6%8B%9F%E6%9C%BA/">【译】Baseimage-docker，胖容器和“容器也是虚拟机”</a></li>
+        
+        <li><a href="/2016/09/Docker%E5%92%8C%E5%AD%90%E8%BF%9B%E7%A8%8B%E5%83%B5%E5%B0%B8%E5%8C%96%E9%97%AE%E9%A2%98/">【译】Docker 和子进程“僵尸化”问题</a></li>
+        
+        <li><a href="/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%85%AD/">【译】第 19 章：Z 文件系统㈥</a></li>
+        
+    </ul>
+</div>
+
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li>
+                    <a href='https://szen.in/tag/Docker'
+                        >Docker</a
+                    >
+                </li>
+                
+                <li>
+                    <a href='https://szen.in/tag/%E8%87%AA%E4%B8%BB%E7%BF%BB%E8%AF%91'
+                        >自主翻译</a
+                    >
+                </li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "snakevil/blog.hugo"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://szen.in/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%85%AD/" title="【译】第 19 章：Z 文件系统㈥">【译】第 19 章：Z 文件系统㈥</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BA%94/" title="【译】第 19 章：Z 文件系统㈤">【译】第 19 章：Z 文件系统㈤</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%9B%9B/" title="【译】第 19 章：Z 文件系统㈣">【译】第 19 章：Z 文件系统㈣</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%B8%89/" title="【译】第 19 章：Z 文件系统㈢">【译】第 19 章：Z 文件系统㈢</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BA%8C/" title="【译】第 19 章：Z 文件系统㈡">【译】第 19 章：Z 文件系统㈡</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%B8%80/" title="【译】第 19 章：Z 文件系统㈠">【译】第 19 章：Z 文件系统㈠</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/2020/05/%E5%B0%86HPE-ProLiant-Gen10-X3421%E6%89%93%E9%80%A0%E6%88%90%E5%8A%A0%E5%BC%BA%E7%89%88NAS/" title="将 HPE ProLiant Gen10 X3421 打造成加强版 NAS">将 HPE ProLiant Gen10 X3421 打造成加强版 NAS</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/2020/05/%E6%AF%AB%E6%97%A0%E9%9A%90%E7%A7%81%E5%8F%AF%E8%A8%80%E7%9A%84cn%E5%9F%9F%E5%90%8DWHOIS%E4%BF%A1%E6%81%AF/" title="毫无隐私可言的 .cn 域名 WHOIS 信息">毫无隐私可言的 .cn 域名 WHOIS 信息</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/2020/03/SAML%E6%98%AF%E4%BB%80%E4%B9%88/" title="【译】SAML 是什么">【译】SAML 是什么</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/2017/04/GNUMake%E4%BD%BF%E7%94%A8%E9%9D%99%E6%80%81%E6%A8%A1%E5%BC%8F%E8%A7%84%E5%88%99/" title="GNUMake 使用静态模式规则">GNUMake 使用静态模式规则</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://szen.in/category/Docker/">Docker (5)</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/category/Linux/">Linux (8)</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/category/%E5%8D%9A%E9%97%BB%E5%B9%BF%E8%AE%B0/">博闻广记 (7)</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/category/%E5%AE%B6%E5%BA%AD%E7%BB%84%E7%BD%91/">家庭组网 (2)</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/category/%E5%BC%80%E5%8F%91%E6%8A%80%E5%B7%A7/">开发技巧 (6)</a>
+    </li>
+    
+    <li>
+        <a href="https://szen.in/category/%E6%9D%82%E8%B0%88%E6%97%A5%E8%AE%B0/">杂谈日记 (2)</a>
+    </li>
+    
+</ul>
+
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://szen.in/tag/Aria2/">Aria2</a>
+    
+    <a href="https://szen.in/tag/CNNIC/">CNNIC</a>
+    
+    <a href="https://szen.in/tag/Dnsmasq/">Dnsmasq</a>
+    
+    <a href="https://szen.in/tag/Docker/">Docker</a>
+    
+    <a href="https://szen.in/tag/FreeBSD/">FreeBSD</a>
+    
+    <a href="https://szen.in/tag/FreeNAS/">FreeNAS</a>
+    
+    <a href="https://szen.in/tag/GNUMake/">GNUMake</a>
+    
+    <a href="https://szen.in/tag/Git/">Git</a>
+    
+    <a href="https://szen.in/tag/Gitolite/">Gitolite</a>
+    
+    <a href="https://szen.in/tag/GnuPG2/">GnuPG2</a>
+    
+    <a href="https://szen.in/tag/HDD/">HDD</a>
+    
+    <a href="https://szen.in/tag/HPE/">HPE</a>
+    
+    <a href="https://szen.in/tag/ICANN/">ICANN</a>
+    
+    <a href="https://szen.in/tag/LigHTTPd/">LigHTTPd</a>
+    
+    <a href="https://szen.in/tag/Linux/">Linux</a>
+    
+    <a href="https://szen.in/tag/Lua/">Lua</a>
+    
+    <a href="https://szen.in/tag/MiniDLNA/">MiniDLNA</a>
+    
+    <a href="https://szen.in/tag/MiniUPnPd/">MiniUPnPd</a>
+    
+    <a href="https://szen.in/tag/MoonScript/">MoonScript</a>
+    
+    <a href="https://szen.in/tag/NAS/">NAS</a>
+    
+    <a href="https://szen.in/tag/Nextcloud/">Nextcloud</a>
+    
+    <a href="https://szen.in/tag/Nginx/">Nginx</a>
+    
+    <a href="https://szen.in/tag/OpenWRT/">OpenWRT</a>
+    
+    <a href="https://szen.in/tag/Plex/">Plex</a>
+    
+    <a href="https://szen.in/tag/ProLiant/">ProLiant</a>
+    
+    <a href="https://szen.in/tag/RAID/">RAID</a>
+    
+    <a href="https://szen.in/tag/S6/">S6</a>
+    
+    <a href="https://szen.in/tag/SAML/">SAML</a>
+    
+    <a href="https://szen.in/tag/SSD/">SSD</a>
+    
+    <a href="https://szen.in/tag/SSO/">SSO</a>
+    
+    <a href="https://szen.in/tag/Samba/">Samba</a>
+    
+    <a href="https://szen.in/tag/Seafile/">Seafile</a>
+    
+    <a href="https://szen.in/tag/Stow/">Stow</a>
+    
+    <a href="https://szen.in/tag/Syncthing/">Syncthing</a>
+    
+    <a href="https://szen.in/tag/Ubuntu/">Ubuntu</a>
+    
+    <a href="https://szen.in/tag/WHOIS/">WHOIS</a>
+    
+    <a href="https://szen.in/tag/ZFS/">ZFS</a>
+    
+    <a href="https://szen.in/tag/crontab/">crontab</a>
+    
+    <a href="https://szen.in/tag/ipset/">ipset</a>
+    
+    <a href="https://szen.in/tag/ownCloud/">ownCloud</a>
+    
+    <a href="https://szen.in/tag/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/">我的世界</a>
+    
+    <a href="https://szen.in/tag/%E7%B3%BB%E7%BB%9F%E6%9E%84%E5%BB%BA/">系统构建</a>
+    
+    <a href="https://szen.in/tag/%E8%87%AA%E4%B8%BB%E7%BF%BB%E8%AF%91/">自主翻译</a>
+    
+</div>
+
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://szen.in/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+    <div class="container">
+        &copy; 2020 <a href="https://szen.in/">天天蜕皮的大蛇 Re by Snakevil</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/flysnow-org/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+
+
+
+
+</body>
+
+</html>

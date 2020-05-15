@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on 天天蜕皮的大蛇 Re</title>
+    <link>https://szen.in/tag/Git/</link>
+    <description>Recent content in Git on 天天蜕皮的大蛇 Re</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 10 May 2020 14:32:58 +0800</lastBuildDate>
+    
+	<atom:link href="https://szen.in/tag/Git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用 GnuPG2 为 Git 版本签名</title>
+      <link>https://szen.in/2016/10/%E4%BD%BF%E7%94%A8GnuPG2%E4%B8%BAGit%E7%89%88%E6%9C%AC%E7%AD%BE%E5%90%8D/</link>
+      <pubDate>Mon, 24 Oct 2016 09:10:02 +0000</pubDate>
+      
+      <guid>https://szen.in/2016/10/%E4%BD%BF%E7%94%A8GnuPG2%E4%B8%BAGit%E7%89%88%E6%9C%AC%E7%AD%BE%E5%90%8D/</guid>
+      <description>&lt;p&gt;从很久很久以前开始，我就一直用 &lt;a href=&#34;http://baike.baidu.com/view/1657408.htm&#34;&gt;GnuPG&lt;/a&gt; 对自己提交的 Git 代码签名。最初地时候是为了装Ｘ，后来则是为了确保代码的可靠性——毕竟 &lt;code&gt;git config&lt;/code&gt; 都是随便写的。今天因为更换 &lt;a href=&#34;http://brew.sh&#34;&gt;Homebrew&lt;/a&gt;，顺路就更新到了 GnuPG2。但是，问题来了…&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FreeBSD on 天天蜕皮的大蛇 Re</title>
+    <link>https://szen.in/tag/FreeBSD/</link>
+    <description>Recent content in FreeBSD on 天天蜕皮的大蛇 Re</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 14 May 2020 16:39:58 +0800</lastBuildDate>
+    
+	<atom:link href="https://szen.in/tag/FreeBSD/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>【译】第 19 章：Z 文件系统㈥</title>
+      <link>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%85%AD/</link>
+      <pubDate>Thu, 14 May 2020 16:39:58 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%85%AD/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-advanced.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;196-进阶主题&#34;&gt;19.6 进阶主题&lt;/h2&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】第 19 章：Z 文件系统㈤</title>
+      <link>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BA%94/</link>
+      <pubDate>Wed, 13 May 2020 22:41:27 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BA%94/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-zfs-allow.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我打赌 100 块钱这四位文档撰写人员没一个的母语是英语！通篇翻译下来都有一股拉丁语系机翻英语的味道。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;195-委派管理&#34;&gt;19.5 委派管理&lt;/h2&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】第 19 章：Z 文件系统㈣</title>
+      <link>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%9B%9B/</link>
+      <pubDate>Wed, 13 May 2020 03:35:12 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%9B%9B/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-zfs.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;194-zfs-管理&#34;&gt;19.4 &lt;code&gt;zfs&lt;/code&gt; 管理&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;zfs&lt;/code&gt; 工具负责创建、销毁和管理池中的 ZFS 数据集。管理池需要使用 &lt;code&gt;zpool&lt;/code&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】第 19 章：Z 文件系统㈢</title>
+      <link>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%B8%89/</link>
+      <pubDate>Tue, 12 May 2020 10:45:39 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%B8%89/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-zpool.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;193-zpool-管理&#34;&gt;19.3 &lt;code&gt;zpool&lt;/code&gt; 管理&lt;/h2&gt;
+&lt;p&gt;ZFS 管理主要通过两个工具实现。&lt;code&gt;zpool&lt;/code&gt; 工具负责操作池和添加、删除、替换、管理磁盘。&lt;a href=&#34;https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%9B%9B/&#34;&gt;&lt;code&gt;zfs&lt;/code&gt;&lt;/a&gt; 工具负责创建、销毁和管理数据集，包括&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-term.html#zfs-term-filesystem&#34;&gt;文件系统&lt;/a&gt;和&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-term.html#zfs-term-volume&#34;&gt;卷&lt;/a&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】第 19 章：Z 文件系统㈡</title>
+      <link>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BA%8C/</link>
+      <pubDate>Mon, 11 May 2020 22:57:35 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BA%8C/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-quickstart.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;192-快速体验指南&#34;&gt;19.2 快速体验指南&lt;/h2&gt;
+&lt;p&gt;有一种启动机制可以让 FreeBSD 在系统初始化阶段加载 ZFS 池。将下行添加至 &lt;code&gt;/etc/rc.conf&lt;/code&gt;：&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】第 19 章：Z 文件系统㈠</title>
+      <link>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%B8%80/</link>
+      <pubDate>Mon, 11 May 2020 22:36:35 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%B8%80/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;由 Tom Rhodes、Allan Jude、Benedict Reuschling 和 Warren Block 编写。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;吐槽：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这帮大佬肯定都是技术宅！文档写得干干巴巴、麻麻咧咧。翻译起来脑壳疼！&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

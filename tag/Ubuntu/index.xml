@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ubuntu on 天天蜕皮的大蛇 Re</title>
+    <link>https://szen.in/tag/Ubuntu/</link>
+    <description>Recent content in Ubuntu on 天天蜕皮的大蛇 Re</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 29 Sep 2016 02:45:27 +0000</lastBuildDate>
+    
+	<atom:link href="https://szen.in/tag/Ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>【译】Baseimage-docker，胖容器和“容器也是虚拟机”</title>
+      <link>https://szen.in/2016/09/Baseimage-docker%E8%83%96%E5%AE%B9%E5%99%A8%E5%92%8C%E5%AE%B9%E5%99%A8%E4%B9%9F%E6%98%AF%E8%99%9A%E6%8B%9F%E6%9C%BA/</link>
+      <pubDate>Thu, 29 Sep 2016 02:45:27 +0000</pubDate>
+      
+      <guid>https://szen.in/2016/09/Baseimage-docker%E8%83%96%E5%AE%B9%E5%99%A8%E5%92%8C%E5%AE%B9%E5%99%A8%E4%B9%9F%E6%98%AF%E8%99%9A%E6%8B%9F%E6%9C%BA/</guid>
+      <description>&lt;p&gt;作者 Hongli Lai 看着像是华人，可惜没找到文章的中文版本，于是就很土鳖地手翻了一遍。文章的措辞很口语化，因此意译为主。&lt;a href=&#34;https://blog.phusion.nl/2015/01/20/baseimage-docker-fat-containers-treating-containers-vms/&#34;&gt;点击这里可以阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;http://phusion.github.io/baseimage-docker/&#34;&gt;Baseimage-docker&lt;/a&gt; 是针对 Docker 优化地 Ubuntu 最小化基础镜像。我们可以&lt;a href=&#34;https://index.docker.io/u/phusion/baseimage/&#34;&gt;从 Docker 仓库中拉取回来&lt;/a&gt;作为基础镜像用在自己的镜像中。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

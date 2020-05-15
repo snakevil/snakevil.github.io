@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 天天蜕皮的大蛇 Re</title>
+    <link>https://szen.in/post/</link>
+    <description>Recent content in Posts on 天天蜕皮的大蛇 Re</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 14 May 2020 16:39:58 +0800</lastBuildDate>
+    
+	<atom:link href="https://szen.in/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>【译】第 19 章：Z 文件系统㈥</title>
+      <link>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%85%AD/</link>
+      <pubDate>Thu, 14 May 2020 16:39:58 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%85%AD/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-advanced.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;196-进阶主题&#34;&gt;19.6 进阶主题&lt;/h2&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】第 19 章：Z 文件系统㈤</title>
+      <link>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BA%94/</link>
+      <pubDate>Wed, 13 May 2020 22:41:27 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BA%94/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-zfs-allow.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我打赌 100 块钱这四位文档撰写人员没一个的母语是英语！通篇翻译下来都有一股拉丁语系机翻英语的味道。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;195-委派管理&#34;&gt;19.5 委派管理&lt;/h2&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】第 19 章：Z 文件系统㈣</title>
+      <link>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%9B%9B/</link>
+      <pubDate>Wed, 13 May 2020 03:35:12 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%9B%9B/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-zfs.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;194-zfs-管理&#34;&gt;19.4 &lt;code&gt;zfs&lt;/code&gt; 管理&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;zfs&lt;/code&gt; 工具负责创建、销毁和管理池中的 ZFS 数据集。管理池需要使用 &lt;code&gt;zpool&lt;/code&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】第 19 章：Z 文件系统㈢</title>
+      <link>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%B8%89/</link>
+      <pubDate>Tue, 12 May 2020 10:45:39 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%B8%89/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-zpool.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;193-zpool-管理&#34;&gt;19.3 &lt;code&gt;zpool&lt;/code&gt; 管理&lt;/h2&gt;
+&lt;p&gt;ZFS 管理主要通过两个工具实现。&lt;code&gt;zpool&lt;/code&gt; 工具负责操作池和添加、删除、替换、管理磁盘。&lt;a href=&#34;https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%9B%9B/&#34;&gt;&lt;code&gt;zfs&lt;/code&gt;&lt;/a&gt; 工具负责创建、销毁和管理数据集，包括&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-term.html#zfs-term-filesystem&#34;&gt;文件系统&lt;/a&gt;和&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-term.html#zfs-term-volume&#34;&gt;卷&lt;/a&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】第 19 章：Z 文件系统㈡</title>
+      <link>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BA%8C/</link>
+      <pubDate>Mon, 11 May 2020 22:57:35 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BA%8C/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs-quickstart.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;192-快速体验指南&#34;&gt;19.2 快速体验指南&lt;/h2&gt;
+&lt;p&gt;有一种启动机制可以让 FreeBSD 在系统初始化阶段加载 ZFS 池。将下行添加至 &lt;code&gt;/etc/rc.conf&lt;/code&gt;：&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】第 19 章：Z 文件系统㈠</title>
+      <link>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%B8%80/</link>
+      <pubDate>Mon, 11 May 2020 22:36:35 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%B8%80/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.freebsd.org/doc/handbook/zfs.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;由 Tom Rhodes、Allan Jude、Benedict Reuschling 和 Warren Block 编写。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;吐槽：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这帮大佬肯定都是技术宅！文档写得干干巴巴、麻麻咧咧。翻译起来脑壳疼！&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>将 HPE ProLiant Gen10 X3421 打造成加强版 NAS</title>
+      <link>https://szen.in/2020/05/%E5%B0%86HPE-ProLiant-Gen10-X3421%E6%89%93%E9%80%A0%E6%88%90%E5%8A%A0%E5%BC%BA%E7%89%88NAS/</link>
+      <pubDate>Sun, 10 May 2020 14:32:58 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E5%B0%86HPE-ProLiant-Gen10-X3421%E6%89%93%E9%80%A0%E6%88%90%E5%8A%A0%E5%BC%BA%E7%89%88NAS/</guid>
+      <description>&lt;p&gt;这两天 &lt;a href=&#34;https://buy.hpe.com/us/en/servers/proliant-microserver/proliant-microserver/proliant-microserver/hpe-proliant-microserver-gen10/hpe-proliant-microserver-gen10-x3421-1p-8gb-u-4lff-nhp-sata-200w-ps-soln-server/p/P04923-S01&#34;&gt;HPE ProLiant MicroServer Gen10 X3421&lt;/a&gt; 就要到货了，得赶紧提前备好硬盘——一块 SSD 做系统，四块 HDD 做 RAID10 仓库。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>毫无隐私可言的 .cn 域名 WHOIS 信息</title>
+      <link>https://szen.in/2020/05/%E6%AF%AB%E6%97%A0%E9%9A%90%E7%A7%81%E5%8F%AF%E8%A8%80%E7%9A%84cn%E5%9F%9F%E5%90%8DWHOIS%E4%BF%A1%E6%81%AF/</link>
+      <pubDate>Sat, 09 May 2020 21:57:31 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/%E6%AF%AB%E6%97%A0%E9%9A%90%E7%A7%81%E5%8F%AF%E8%A8%80%E7%9A%84cn%E5%9F%9F%E5%90%8DWHOIS%E4%BF%A1%E6%81%AF/</guid>
+      <description>&lt;p&gt;这两天提起精神给我最近从&lt;a href=&#34;https://www.aliyun.com&#34;&gt;阿里云&lt;/a&gt;买的一个 &lt;code&gt;.cn&lt;/code&gt; 域名备案。正巧前两天看了一个财经类自媒体的视频节目，提到了如何通过域名的 &lt;a href=&#34;https://baike.so.com/doc/5507304-5743050.html&#34;&gt;WHOIS&lt;/a&gt; 信息（吐槽为啥中文泛百科只有 baidu 和 360 两家？我没一个瞧得上的）。心血来潮就说自己也试着玩玩，结果把自己吓一大跳！赤裸裸毫无隐私可言！！真™荒诞！！！&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】SAML 是什么</title>
+      <link>https://szen.in/2020/03/SAML%E6%98%AF%E4%BB%80%E4%B9%88/</link>
+      <pubDate>Fri, 13 Mar 2020 12:07:44 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/03/SAML%E6%98%AF%E4%BB%80%E4%B9%88/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.cloudflare.com/learning/access-management/what-is-saml/&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;saml-是什么&#34;&gt;SAML 是什么？&lt;/h2&gt;
+&lt;p&gt;安全断言标记语言（Security Assertion Markup Language，SAML)，是一种告诉外部应用程序和服务究竟谁才是自身目标用户的标准化方法。基于 SAML，用户只需认证一次便可在多项应用程序中保持身份。由此单点登录（Single Sign-On，SSO）技术才得以实践。当下 SAML 的最新版本是 SAML 2.0。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GNUMake 使用静态模式规则</title>
+      <link>https://szen.in/2017/04/GNUMake%E4%BD%BF%E7%94%A8%E9%9D%99%E6%80%81%E6%A8%A1%E5%BC%8F%E8%A7%84%E5%88%99/</link>
+      <pubDate>Fri, 07 Apr 2017 04:43:00 +0000</pubDate>
+      
+      <guid>https://szen.in/2017/04/GNUMake%E4%BD%BF%E7%94%A8%E9%9D%99%E6%80%81%E6%A8%A1%E5%BC%8F%E8%A7%84%E5%88%99/</guid>
+      <description>&lt;p&gt;最近在写 &lt;a href=&#34;https://github.com/snakevil-archive/luadex2&#34;&gt;Luadex2&lt;/a&gt; 时，顺手就用 &lt;a href=&#34;http://www.gnu.org/software/make/&#34;&gt;GNUMake&lt;/a&gt; 来做构建工具了——这样还能热热手把好久好久没用地 &lt;a href=&#34;http://www.gnu.org/software/make/&#34;&gt;GNUMake&lt;/a&gt; 再捡回来。中间碰到一个问题，我需要动态地扫描出全部的某类型的文件，然后按照同样的规则进行处理。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Lua 面向对象式开发的 __tostring 问题</title>
+      <link>https://szen.in/2017/04/Lua%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%BC%8F%E5%BC%80%E5%8F%91%E7%9A%84tostring%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 07 Apr 2017 03:31:04 +0000</pubDate>
+      
+      <guid>https://szen.in/2017/04/Lua%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%BC%8F%E5%BC%80%E5%8F%91%E7%9A%84tostring%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;至 &lt;a href=&#34;http://luajit.org&#34;&gt;LuaJIT-2.0.4 为止&lt;/a&gt;，&lt;code&gt;tostring()&lt;/code&gt; 函数都只会检查并调用&lt;strong&gt;元表&lt;/strong&gt;的 &lt;code&gt;__tostring&lt;/code&gt; 函数。那么在面向对象式开发时，如何让基类定义地统一 &lt;code&gt;__tostring&lt;/code&gt; 机制生效？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Nginx try_files 的美感</title>
+      <link>https://szen.in/2016/11/Nginx-try_files%E7%9A%84%E7%BE%8E%E6%84%9F/</link>
+      <pubDate>Tue, 15 Nov 2016 02:04:05 +0000</pubDate>
+      
+      <guid>https://szen.in/2016/11/Nginx-try_files%E7%9A%84%E7%BE%8E%E6%84%9F/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://nginx.org&#34;&gt;Nginx&lt;/a&gt; &lt;code&gt;try_files&lt;/code&gt; 指令自实现之日启，风靡至今。单纯说功能实现地话，确实能够快速地适配各种需要场景，省掉了大段的 &lt;code&gt;if&lt;/code&gt; 和 &lt;code&gt;set&lt;/code&gt;。但相应的 URL 拼写格式，就真地不忍直视了。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用 GnuPG2 为 Git 版本签名</title>
+      <link>https://szen.in/2016/10/%E4%BD%BF%E7%94%A8GnuPG2%E4%B8%BAGit%E7%89%88%E6%9C%AC%E7%AD%BE%E5%90%8D/</link>
+      <pubDate>Mon, 24 Oct 2016 09:10:02 +0000</pubDate>
+      
+      <guid>https://szen.in/2016/10/%E4%BD%BF%E7%94%A8GnuPG2%E4%B8%BAGit%E7%89%88%E6%9C%AC%E7%AD%BE%E5%90%8D/</guid>
+      <description>&lt;p&gt;从很久很久以前开始，我就一直用 &lt;a href=&#34;http://baike.baidu.com/view/1657408.htm&#34;&gt;GnuPG&lt;/a&gt; 对自己提交的 Git 代码签名。最初地时候是为了装Ｘ，后来则是为了确保代码的可靠性——毕竟 &lt;code&gt;git config&lt;/code&gt; 都是随便写的。今天因为更换 &lt;a href=&#34;http://brew.sh&#34;&gt;Homebrew&lt;/a&gt;，顺路就更新到了 GnuPG2。但是，问题来了…&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】如何将 s6-svscan 用作初始进程</title>
+      <link>https://szen.in/2016/09/%E5%A6%82%E4%BD%95%E5%B0%86s6-svscan%E7%94%A8%E4%BD%9C%E5%88%9D%E5%A7%8B%E8%BF%9B%E7%A8%8B/</link>
+      <pubDate>Thu, 29 Sep 2016 09:32:36 +0000</pubDate>
+      
+      <guid>https://szen.in/2016/09/%E5%A6%82%E4%BD%95%E5%B0%86s6-svscan%E7%94%A8%E4%BD%9C%E5%88%9D%E5%A7%8B%E8%BF%9B%E7%A8%8B/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://skarnet.org/software/s6/s6-svscan-1.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;2015 年 6 月 17 日之后，如果你是 Linux 用户，你可以使用 &lt;a href=&#34;http://skarnet.org/software/s6-linux-init/&#34;&gt;s6-linux-init&lt;/a&gt; 包来帮助你实现同样的目标！尽管如此，还是请你首先阅读本篇文档，以理解 s6-linux-init 的工作内容。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;将 s6-svscan 用作初始进程是可行的。但这并不意味着你可以直接通过 s6-svscan &lt;strong&gt;引导&lt;/strong&gt;，因为它还无法胜任完整的初始化系统所应做地全部工作。正确地替换掉初始进程，还需要对其工作内容做更多地理解。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】Docker 和 S6 ——我的进程管理器新欢</title>
+      <link>https://szen.in/2016/09/Docker%E5%92%8CS6%E6%88%91%E7%9A%84%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86%E5%99%A8%E6%96%B0%E6%AC%A2/</link>
+      <pubDate>Thu, 29 Sep 2016 05:50:04 +0000</pubDate>
+      
+      <guid>https://szen.in/2016/09/Docker%E5%92%8CS6%E6%88%91%E7%9A%84%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86%E5%99%A8%E6%96%B0%E6%AC%A2/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://blog.tutum.co/2014/12/02/docker-and-s6-my-new-favorite-process-supervisor/&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;在&lt;a href=&#34;https://blog.tutum.co/2014/10/28/the-5-most-important-things-ive-learned-from-using-docker/&#34;&gt;我之前的博文&lt;/a&gt;中，我描述了我是如何在容器中使用进程管理器的，并做了一些展开。但我还是觉得有必要针对 &lt;a href=&#34;http://skarnet.org/software/s6/&#34;&gt;Laurent Bercot 开发的 S6&lt;/a&gt; 做更详尽的说明。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】使用 Docker 的 5 大心得</title>
+      <link>https://szen.in/2016/09/%E4%BD%BF%E7%94%A8Docker%E7%9A%845%E5%A4%A7%E5%BF%83%E5%BE%97/</link>
+      <pubDate>Thu, 29 Sep 2016 04:25:19 +0000</pubDate>
+      
+      <guid>https://szen.in/2016/09/%E4%BD%BF%E7%94%A8Docker%E7%9A%845%E5%A4%A7%E5%BF%83%E5%BE%97/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://blog.tutum.co/2014/10/28/the-5-most-important-things-ive-learned-from-using-docker/&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在近一年多的时间里，我在多个平台上都频繁地使用了 Docker （包括本地 Linux 和云服务）。也因此学会了如何管理我的镜像，如何构建跨平台的弹性镜像，甚至于如何编写“非 Docker 特定”的程序。最终，我整理了五条便于理解的心得，以便于后继的新 Docker （甚至不是 Docker）的项目。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】Baseimage-docker，胖容器和“容器也是虚拟机”</title>
+      <link>https://szen.in/2016/09/Baseimage-docker%E8%83%96%E5%AE%B9%E5%99%A8%E5%92%8C%E5%AE%B9%E5%99%A8%E4%B9%9F%E6%98%AF%E8%99%9A%E6%8B%9F%E6%9C%BA/</link>
+      <pubDate>Thu, 29 Sep 2016 02:45:27 +0000</pubDate>
+      
+      <guid>https://szen.in/2016/09/Baseimage-docker%E8%83%96%E5%AE%B9%E5%99%A8%E5%92%8C%E5%AE%B9%E5%99%A8%E4%B9%9F%E6%98%AF%E8%99%9A%E6%8B%9F%E6%9C%BA/</guid>
+      <description>&lt;p&gt;作者 Hongli Lai 看着像是华人，可惜没找到文章的中文版本，于是就很土鳖地手翻了一遍。文章的措辞很口语化，因此意译为主。&lt;a href=&#34;https://blog.phusion.nl/2015/01/20/baseimage-docker-fat-containers-treating-containers-vms/&#34;&gt;点击这里可以阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;http://phusion.github.io/baseimage-docker/&#34;&gt;Baseimage-docker&lt;/a&gt; 是针对 Docker 优化地 Ubuntu 最小化基础镜像。我们可以&lt;a href=&#34;https://index.docker.io/u/phusion/baseimage/&#34;&gt;从 Docker 仓库中拉取回来&lt;/a&gt;作为基础镜像用在自己的镜像中。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】Docker 和子进程“僵尸化”问题</title>
+      <link>https://szen.in/2016/09/Docker%E5%92%8C%E5%AD%90%E8%BF%9B%E7%A8%8B%E5%83%B5%E5%B0%B8%E5%8C%96%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 28 Sep 2016 11:59:52 +0000</pubDate>
+      
+      <guid>https://szen.in/2016/09/Docker%E5%92%8C%E5%AD%90%E8%BF%9B%E7%A8%8B%E5%83%B5%E5%B0%B8%E5%8C%96%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;作者 Hongli Lai 看着像是华人，可惜没找到文章的中文版本，于是就很土鳖地手翻了一遍。文章的措辞很口语化，因此意译为主。&lt;a href=&#34;https://blog.phusion.nl/2015/01/20/docker-and-the-pid-1-zombie-reaping-problem/&#34;&gt;点击这里可以阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;在构建 Docker 容器时，我们需要注意子进程的“僵尸化”问题（PID 1 Zombie Reaping Problem）。这会导致不可预知的和看起来匪夷所思的问题。本文解释了这个问题，也解释了如何去解决，并提供了一种预构建方案：Baseimage-docker 。&lt;/p&gt;
+&lt;p&gt;在通篇阅读之后，还有第二篇：&lt;a href=&#34;https://blog.phusion.nl/2015/01/20/baseimage-docker-fat-containers-treating-containers-vms/&#34;&gt;《Baseimage-docker，胖容器和“容器也是虚拟机”》&lt;/a&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>如何更好地管理 Nginx 多主机配置</title>
+      <link>https://szen.in/2016/08/%E5%A6%82%E4%BD%95%E6%9B%B4%E5%A5%BD%E5%9C%B0%E7%AE%A1%E7%90%86Nginx%E5%A4%9A%E4%B8%BB%E6%9C%BA%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Fri, 26 Aug 2016 05:45:17 +0000</pubDate>
+      
+      <guid>https://szen.in/2016/08/%E5%A6%82%E4%BD%95%E6%9B%B4%E5%A5%BD%E5%9C%B0%E7%AE%A1%E7%90%86Nginx%E5%A4%9A%E4%B8%BB%E6%9C%BA%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://nginx.org/&#34;&gt;Nginx&lt;/a&gt; 一直以来都有一个很尴尬地问题——就是为了效率，抛弃了 &lt;a href=&#34;http://baike.baidu.com/view/91163.htm&#34;&gt;htaccess&lt;/a&gt; 目录配置文件。当一个项目打算使用 &lt;a href=&#34;http://nginx.org/&#34;&gt;Nginx&lt;/a&gt; 来提供 HTTP 服务时，就不得不在配置文件中大量地&lt;strong&gt;硬编码&lt;/strong&gt;目录信息，可移植性和可维护性很差。那么，能否找到一种相对变通的方法，来提高可移植性和可维护性？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OpenWrt BarrierBreaker 14.07-rc3 手记</title>
+      <link>https://szen.in/2014/09/OpenWrt-BarrierBreaker_14_07_rc3%E6%89%8B%E8%AE%B0/</link>
+      <pubDate>Thu, 18 Sep 2014 05:59:59 +0000</pubDate>
+      
+      <guid>https://szen.in/2014/09/OpenWrt-BarrierBreaker_14_07_rc3%E6%89%8B%E8%AE%B0/</guid>
+      <description>&lt;p&gt;[OpenWRT][] 新的大版本发布了第三个候选包，据说 Bug 收敛得很不错，几乎不影响正常使用了。正好我也期盼已久，果断给路由升级！&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>/etc/cron.d 攻略</title>
+      <link>https://szen.in/2014/07/etc-cron_d%E6%94%BB%E7%95%A5/</link>
+      <pubDate>Thu, 17 Jul 2014 10:01:15 +0000</pubDate>
+      
+      <guid>https://szen.in/2014/07/etc-cron_d%E6%94%BB%E7%95%A5/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://linux.die.net/man/1/crontab&#34;&gt;crontab&lt;/a&gt; 是日常使用最为频繁地定时器工具。它将每个用户的所有定时任务统一记录、统一管理。&lt;/p&gt;
+&lt;h2 id=&#34;为什么不用-crontab-&#34;&gt;为什么不用 &lt;a href=&#34;http://linux.die.net/man/1/crontab&#34;&gt;crontab&lt;/a&gt; ？&lt;/h2&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
