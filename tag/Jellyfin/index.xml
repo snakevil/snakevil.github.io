@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jellyfin on 天天蜕皮的大蛇 Re</title>
+    <link>https://szen.in/tag/Jellyfin/</link>
+    <description>Recent content in Jellyfin on 天天蜕皮的大蛇 Re</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 17 May 2020 11:59:47 +0800</lastBuildDate>
+    
+	<atom:link href="https://szen.in/tag/Jellyfin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>【译】Plex vs. Emby vs. Jellyfin vs. Kodi——2020 年深度比较</title>
+      <link>https://szen.in/2020/05/Plex-vs-Emby-vs-Jellyfin-vs-Kodi-2020%E5%B9%B4%E6%B7%B1%E5%BA%A6%E6%AF%94%E8%BE%83/</link>
+      <pubDate>Sun, 17 May 2020 11:59:47 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/Plex-vs-Emby-vs-Jellyfin-vs-Kodi-2020%E5%B9%B4%E6%B7%B1%E5%BA%A6%E6%AF%94%E8%BE%83/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.smarthomebeginner.com/plex-vs-emby-kodi-jellyfin-2020/&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Plex 和 Emby，应该选哪个？或许 Kodi 更好？新人 Jellyfin 怎么样？本篇完善后的指南介绍了 Plex 和 Emby 之间的差异，并与 Kodi 做比较，以帮助您做出选择。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>【译】Plex vs. Emby vs. Jellyfin——谁才是最优解？</title>
+      <link>https://szen.in/2020/05/Plex-vs-Emby-vs-Jellyfin-%E8%B0%81%E6%89%8D%E6%98%AF%E6%9C%80%E4%BC%98%E8%A7%A3/</link>
+      <pubDate>Sat, 16 May 2020 18:33:09 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/Plex-vs-Emby-vs-Jellyfin-%E8%B0%81%E6%89%8D%E6%98%AF%E6%9C%80%E4%BC%98%E8%A7%A3/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://medium.com/@EthR/plex-vs-emby-vs-jellyfin-which-is-the-best-option-6e308454c410&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;家用媒体市场主要有三个竞争者。您很有可能听说过 &lt;a href=&#34;https://www.plex.tv&#34;&gt;Plex&lt;/a&gt; 和 &lt;a href=&#34;https://emby.media&#34;&gt;Emby&lt;/a&gt;——而 &lt;a href=&#34;https://jellyfin.org&#34;&gt;Jellyfin&lt;/a&gt; 则是一位日益流行的新秀。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
