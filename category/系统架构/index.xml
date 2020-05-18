@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>RAID on 天天蜕皮的大蛇 Re</title>
-    <link>https://szen.in/tag/RAID/</link>
-    <description>Recent content in RAID on 天天蜕皮的大蛇 Re</description>
+    <title>系统架构 on 天天蜕皮的大蛇 Re</title>
+    <link>https://szen.in/category/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/</link>
+    <description>Recent content in 系统架构 on 天天蜕皮的大蛇 Re</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 17 May 2020 20:18:04 +0800</lastBuildDate>
     
-	<atom:link href="https://szen.in/tag/RAID/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://szen.in/category/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -21,15 +21,6 @@
 &lt;hr&gt;
 &lt;p&gt;比较每种 RAID-Z 类型的速度、空间和安全性。&lt;/p&gt;
 &lt;p&gt;ZFS 包含数据完整性校验、防止数据损坏、支持高存储容量、出色的性能、同步、快照与写时复制（Copy-On-Write，COW）克隆，和自愈功能，这些功能都使其成为数据存储时的自然选择。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>将 HPE ProLiant Gen10 X3421 打造成加强版 NAS</title>
-      <link>https://szen.in/2020/05/%E5%B0%86HPE-ProLiant-Gen10-X3421%E6%89%93%E9%80%A0%E6%88%90%E5%8A%A0%E5%BC%BA%E7%89%88NAS/</link>
-      <pubDate>Sun, 10 May 2020 14:32:58 +0800</pubDate>
-      
-      <guid>https://szen.in/2020/05/%E5%B0%86HPE-ProLiant-Gen10-X3421%E6%89%93%E9%80%A0%E6%88%90%E5%8A%A0%E5%BC%BA%E7%89%88NAS/</guid>
-      <description>&lt;p&gt;这两天 &lt;a href=&#34;https://buy.hpe.com/us/en/servers/proliant-microserver/proliant-microserver/proliant-microserver/hpe-proliant-microserver-gen10/hpe-proliant-microserver-gen10-x3421-1p-8gb-u-4lff-nhp-sata-200w-ps-soln-server/p/P04923-S01&#34;&gt;HPE ProLiant MicroServer Gen10 X3421&lt;/a&gt; 就要到货了，得赶紧提前备好硬盘——一块 SSD 做系统，四块 HDD 做 RAID10 仓库。&lt;/p&gt;</description>
     </item>
     
   </channel>

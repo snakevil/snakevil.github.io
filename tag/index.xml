@@ -6,10 +6,55 @@
     <description>Recent content in Tag on 天天蜕皮的大蛇 Re</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 17 May 2020 11:59:47 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 17 May 2020 20:18:04 +0800</lastBuildDate>
     
 	<atom:link href="https://szen.in/tag/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>FreeBSD</title>
+      <link>https://szen.in/tag/FreeBSD/</link>
+      <pubDate>Sun, 17 May 2020 20:18:04 +0800</pubDate>
+      
+      <guid>https://szen.in/tag/FreeBSD/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://szen.in/tag/Linux/</link>
+      <pubDate>Sun, 17 May 2020 20:18:04 +0800</pubDate>
+      
+      <guid>https://szen.in/tag/Linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RAID</title>
+      <link>https://szen.in/tag/RAID/</link>
+      <pubDate>Sun, 17 May 2020 20:18:04 +0800</pubDate>
+      
+      <guid>https://szen.in/tag/RAID/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ZFS</title>
+      <link>https://szen.in/tag/ZFS/</link>
+      <pubDate>Sun, 17 May 2020 20:18:04 +0800</pubDate>
+      
+      <guid>https://szen.in/tag/ZFS/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>自主翻译</title>
+      <link>https://szen.in/tag/%E8%87%AA%E4%B8%BB%E7%BF%BB%E8%AF%91/</link>
+      <pubDate>Sun, 17 May 2020 20:18:04 +0800</pubDate>
+      
+      <guid>https://szen.in/tag/%E8%87%AA%E4%B8%BB%E7%BF%BB%E8%AF%91/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Emby</title>
@@ -44,42 +89,6 @@
       <pubDate>Sun, 17 May 2020 11:59:47 +0800</pubDate>
       
       <guid>https://szen.in/tag/Plex/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>自主翻译</title>
-      <link>https://szen.in/tag/%E8%87%AA%E4%B8%BB%E7%BF%BB%E8%AF%91/</link>
-      <pubDate>Sun, 17 May 2020 11:59:47 +0800</pubDate>
-      
-      <guid>https://szen.in/tag/%E8%87%AA%E4%B8%BB%E7%BF%BB%E8%AF%91/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>FreeBSD</title>
-      <link>https://szen.in/tag/FreeBSD/</link>
-      <pubDate>Thu, 14 May 2020 16:39:58 +0800</pubDate>
-      
-      <guid>https://szen.in/tag/FreeBSD/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://szen.in/tag/Linux/</link>
-      <pubDate>Thu, 14 May 2020 16:39:58 +0800</pubDate>
-      
-      <guid>https://szen.in/tag/Linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ZFS</title>
-      <link>https://szen.in/tag/ZFS/</link>
-      <pubDate>Thu, 14 May 2020 16:39:58 +0800</pubDate>
-      
-      <guid>https://szen.in/tag/ZFS/</guid>
       <description></description>
     </item>
     
@@ -170,15 +179,6 @@
       <pubDate>Sun, 10 May 2020 14:32:58 +0800</pubDate>
       
       <guid>https://szen.in/tag/ProLiant/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>RAID</title>
-      <link>https://szen.in/tag/RAID/</link>
-      <pubDate>Sun, 10 May 2020 14:32:58 +0800</pubDate>
-      
-      <guid>https://szen.in/tag/RAID/</guid>
       <description></description>
     </item>
     

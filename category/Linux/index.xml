@@ -6,10 +6,22 @@
     <description>Recent content in Linux on 天天蜕皮的大蛇 Re</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 14 May 2020 16:39:58 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 17 May 2020 20:18:04 +0800</lastBuildDate>
     
 	<atom:link href="https://szen.in/category/Linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>【译】ZFS RAID-Z 的性能、容量和完整性</title>
+      <link>https://szen.in/2020/05/ZFS-RAIDZ%E7%9A%84%E6%80%A7%E8%83%BD%E5%AE%B9%E9%87%8F%E5%92%8C%E5%AE%8C%E6%95%B4%E6%80%A7/</link>
+      <pubDate>Sun, 17 May 2020 20:18:04 +0800</pubDate>
+      
+      <guid>https://szen.in/2020/05/ZFS-RAIDZ%E7%9A%84%E6%80%A7%E8%83%BD%E5%AE%B9%E9%87%8F%E5%92%8C%E5%AE%8C%E6%95%B4%E6%80%A7/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://calomel.org/zfs_raid_speed_capacity.html&#34;&gt;点击这里阅读原文。&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;比较每种 RAID-Z 类型的速度、空间和安全性。&lt;/p&gt;
+&lt;p&gt;ZFS 包含数据完整性校验、防止数据损坏、支持高存储容量、出色的性能、同步、快照与写时复制（Copy-On-Write，COW）克隆，和自愈功能，这些功能都使其成为数据存储时的自然选择。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>【译】第 19 章：Z 文件系统㈥</title>

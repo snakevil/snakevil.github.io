@@ -4,7 +4,67 @@
   
   <url>
     <loc>https://szen.in/category/</loc>
-    <lastmod>2020-05-17T11:59:47+08:00</lastmod>
+    <lastmod>2020-05-17T20:18:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szen.in/tag/FreeBSD/</loc>
+    <lastmod>2020-05-17T20:18:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szen.in/tag/Linux/</loc>
+    <lastmod>2020-05-17T20:18:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szen.in/category/Linux/</loc>
+    <lastmod>2020-05-17T20:18:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szen.in/post/</loc>
+    <lastmod>2020-05-17T20:18:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szen.in/tag/RAID/</loc>
+    <lastmod>2020-05-17T20:18:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szen.in/tag/</loc>
+    <lastmod>2020-05-17T20:18:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szen.in/tag/ZFS/</loc>
+    <lastmod>2020-05-17T20:18:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szen.in/2020/05/ZFS-RAIDZ%E7%9A%84%E6%80%A7%E8%83%BD%E5%AE%B9%E9%87%8F%E5%92%8C%E5%AE%8C%E6%95%B4%E6%80%A7/</loc>
+    <lastmod>2020-05-17T20:18:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szen.in/category/%E5%8D%9A%E9%97%BB%E5%B9%BF%E8%AE%B0/</loc>
+    <lastmod>2020-05-17T20:18:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szen.in/</loc>
+    <lastmod>2020-05-17T20:18:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szen.in/category/%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84/</loc>
+    <lastmod>2020-05-17T20:18:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://szen.in/tag/%E8%87%AA%E4%B8%BB%E7%BF%BB%E8%AF%91/</loc>
+    <lastmod>2020-05-17T20:18:04+08:00</lastmod>
   </url>
   
   <url>
@@ -28,22 +88,7 @@
   </url>
   
   <url>
-    <loc>https://szen.in/post/</loc>
-    <lastmod>2020-05-17T11:59:47+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://szen.in/tag/</loc>
-    <lastmod>2020-05-17T11:59:47+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://szen.in/2020/05/Plex-vs-Emby-vs-Jellyfin-vs-Kodi-2020%E5%B9%B4%E6%B7%B1%E5%BA%A6%E6%AF%94%E8%BE%83/</loc>
-    <lastmod>2020-05-17T11:59:47+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://szen.in/</loc>
     <lastmod>2020-05-17T11:59:47+08:00</lastmod>
   </url>
   
@@ -53,42 +98,12 @@
   </url>
   
   <url>
-    <loc>https://szen.in/tag/%E8%87%AA%E4%B8%BB%E7%BF%BB%E8%AF%91/</loc>
-    <lastmod>2020-05-17T11:59:47+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://szen.in/2020/05/Plex-vs-Emby-vs-Jellyfin-%E8%B0%81%E6%89%8D%E6%98%AF%E6%9C%80%E4%BC%98%E8%A7%A3/</loc>
     <lastmod>2020-05-16T18:33:09+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://szen.in/tag/FreeBSD/</loc>
-    <lastmod>2020-05-14T16:39:58+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://szen.in/tag/Linux/</loc>
-    <lastmod>2020-05-14T16:39:58+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://szen.in/category/Linux/</loc>
-    <lastmod>2020-05-14T16:39:58+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://szen.in/tag/ZFS/</loc>
-    <lastmod>2020-05-14T16:39:58+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://szen.in/2020/05/%E7%AC%AC19%E7%AB%A0Z%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%85%AD/</loc>
-    <lastmod>2020-05-14T16:39:58+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://szen.in/category/%E5%8D%9A%E9%97%BB%E5%B9%BF%E8%AE%B0/</loc>
     <lastmod>2020-05-14T16:39:58+08:00</lastmod>
   </url>
   
@@ -164,11 +179,6 @@
   
   <url>
     <loc>https://szen.in/tag/ProLiant/</loc>
-    <lastmod>2020-05-10T14:32:58+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://szen.in/tag/RAID/</loc>
     <lastmod>2020-05-10T14:32:58+08:00</lastmod>
   </url>
   
