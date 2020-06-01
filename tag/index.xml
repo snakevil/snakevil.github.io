@@ -6,10 +6,37 @@
     <description>Recent content in Tag on 天天蜕皮的大蛇 Re</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 17 May 2020 20:18:04 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 30 May 2020 20:11:27 +0800</lastBuildDate>
     
 	<atom:link href="https://szen.in/tag/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>N3150</title>
+      <link>https://szen.in/tag/N3150/</link>
+      <pubDate>Sat, 30 May 2020 20:11:27 +0800</pubDate>
+      
+      <guid>https://szen.in/tag/N3150/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OpenWRT</title>
+      <link>https://szen.in/tag/OpenWRT/</link>
+      <pubDate>Sat, 30 May 2020 20:11:27 +0800</pubDate>
+      
+      <guid>https://szen.in/tag/OpenWRT/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ProLiant</title>
+      <link>https://szen.in/tag/ProLiant/</link>
+      <pubDate>Mon, 18 May 2020 09:12:19 +0800</pubDate>
+      
+      <guid>https://szen.in/tag/ProLiant/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>FreeBSD</title>
@@ -170,15 +197,6 @@
       <pubDate>Sun, 10 May 2020 14:32:58 +0800</pubDate>
       
       <guid>https://szen.in/tag/ownCloud/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ProLiant</title>
-      <link>https://szen.in/tag/ProLiant/</link>
-      <pubDate>Sun, 10 May 2020 14:32:58 +0800</pubDate>
-      
-      <guid>https://szen.in/tag/ProLiant/</guid>
       <description></description>
     </item>
     
@@ -404,15 +422,6 @@
       <pubDate>Thu, 18 Sep 2014 05:59:59 +0000</pubDate>
       
       <guid>https://szen.in/tag/MiniUPnPd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>OpenWRT</title>
-      <link>https://szen.in/tag/OpenWRT/</link>
-      <pubDate>Thu, 18 Sep 2014 05:59:59 +0000</pubDate>
-      
-      <guid>https://szen.in/tag/OpenWRT/</guid>
       <description></description>
     </item>
     
